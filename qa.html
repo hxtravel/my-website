@@ -6,37 +6,93 @@
     <title>常見問題 Q&A | 和諧旅遊</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
+        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; --red: #ff5252; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; color: #2d3748; }
+        
+        /* 統一導航欄 */
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
         .logo-img { height: 60px; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
-        .qa-container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
-        .qa-item { background: white; padding: 30px; border-radius: 20px; margin-bottom: 20px; border-left: 6px solid var(--sky-blue); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .q { font-weight: bold; color: #ff5252; margin-bottom: 10px; }
+        
+        .qa-container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+        .qa-item { background: white; padding: 30px; border-radius: 20px; margin-bottom: 25px; border-left: 6px solid var(--sky-blue); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .q { font-weight: bold; color: var(--red); font-size: 1.15rem; margin-bottom: 12px; display: flex; align-items: center; }
+        .q::before { content: "Q"; font-size: 1.5rem; margin-right: 10px; opacity: 0.3; }
+        .a { color: #4a5568; }
+        
+        h1 { text-align: center; color: var(--deep-blue); margin-bottom: 40px; font-size: 2.2rem; }
+        footer { background: #1a202c; color: white; padding: 30px; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="LOGO.png" class="logo-img"></a>
+        <a href="index.html"><img src="LOGO.png" alt="和諧旅遊" class="logo-img"></a>
         <ul class="nav-links">
             <li><a href="index.html">首頁</a></li>
             <li><a href="about.html">關於我們</a></li>
-            <li><a href="analysis.html">行程分析</a></li>
+            <li><a href="analysis.html">購物站釋疑</a></li>
             <li><a href="qa.html">常見問題</a></li>
             <li><a href="https://lin.ee/7WGlamz" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
+
     <div class="qa-container">
-        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 40px;">常見問題 Q&A</h1>
-        <div class="qa-item"><div class="q">Q1：和諧旅行社是合法立案的嗎？</div><p>絕對合法。領有政府執照（觀光署：754100），並依法投保履約保證保險。</p></div>
-        <div class="qa-item"><div class="q">Q2：如果行程中遇到突發狀況怎麼辦？</div><p>我們設有 24 小時緊急聯絡專線，領隊全程隨團處理所有狀況。</p></div>
-        <div class="qa-item"><div class="q">Q3：網站上的價格是真的嗎？</div><p>堅持報價透明，網頁標價即為實際成本，絕無隱藏費用。</p></div>
-        <div class="qa-item"><div class="q">Q4：進購物站會被強迫買東西嗎？</div><p>絕對不會。購物站僅供體驗，買與不買完全隨心，嚴禁任何強迫行為。</p></div>
-        <div class="qa-item"><div class="q">Q5：有提供「無購物」行程嗎？</div><p>有的。我們同時提供特惠購物團與豪華無購物團供旅客選擇。</p></div>
+        <h1>常見問題 Q&A</h1>
+
+        <div class="qa-item">
+            <div class="q">和諧旅行社是合法立案的嗎？</div>
+            <div class="a">絕對合法。我們領有政府旅行業執照（觀光署：754100），並依法投保履約保證保險與責任險，旅客權益受全方位法律保障。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">為什麼團費可以比市場行情便宜這麼多？</div>
+            <div class="a">我們採用「資源共享補貼」模式。透過與當地優質廠商深度合作，由廠商贊助廣告經費，我們直接回饋給旅客，讓您能以驚喜價享受高規食宿。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">進購物站會被強迫買東西嗎？</div>
+            <div class="a">絕對不會。購物站僅提供在地特色產品體驗（如蠶絲、珠寶、茶葉等），買與不買完全隨心。我們的領隊導遊皆受過專業訓練，嚴禁任何強迫購買行為。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">便宜團的食宿品質會不會打折扣？</div>
+            <div class="a">品質反而更好！我們將廠商補貼經費投入在硬體升級，確保入住五星級飯店並享用在地精緻餐食，實現高 CP 值的旅遊體驗。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">如果行程中遇到突發狀況怎麼辦？</div>
+            <div class="a">我們設有 24 小時緊急聯絡專線，且每一團皆有經驗豐富的高 EQ 領隊全程隨團，隨時應對各種突發狀況。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">有提供「無購物」的純玩行程嗎？</div>
+            <div class="a">有的。我們同時提供「特惠購物團」與「豪華無購物團」。您可以根據預算需求彈性選擇，兩者服務品質同樣嚴謹。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">報名後多久可以確認是否成行？</div>
+            <div class="a">專業客服將在工作日 24 小時內與您聯繫確認細節。若人數不足無法成行，最慢將在出發前 7 天通知並全額退款。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">網站上的報價是最終價格嗎？</div>
+            <div class="a">是的。我們堅持報價透明，網頁標價即為實際成本。除個人私人購物支出外，絕無任何隱藏性收費。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">有特殊飲食需求（如素食）可以安排嗎？</div>
+            <div class="a">沒問題。只要在報名時預先告知客服，我們都會為您預先與餐廳及飯店溝通妥當，確保用餐無虞。</div>
+        </div>
+
+        <div class="qa-item">
+            <div class="q">如何聯繫客服諮詢更詳細的行程？</div>
+            <div class="a">您可以點擊網頁上方的「LINE 諮詢」按鈕，加入我們的官方帳號，將有專業顧問為您一對一解答所有疑問。</div>
+        </div>
     </div>
+
+    <footer><p>&copy; 2026 和諧旅遊 | 統編：54540709</p></footer>
 </body>
 </html>
