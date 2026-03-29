@@ -14,13 +14,13 @@
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
         .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
-        .container { max-width: 1050px; margin: 40px auto; background: white; padding: 40px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 750px; }
-        th, td { padding: 22px 15px; border-bottom: 1px solid #edf2f7; text-align: left; }
-        th { background: #f8fafc; color: var(--deep-blue); }
-        .highlight { background: rgba(0, 170, 255, 0.05); font-weight: bold; border-left: 3px solid var(--sky-blue); }
-        .red-text { color: #ff5252; font-weight: bold; }
-        .green-note { color: #2f855a; font-size: 0.9rem; font-style: italic; }
+        .container { max-width: 1000px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow-x: auto; min-height: 60vh; }
+        table { width: 100%; border-collapse: collapse; min-width: 700px; }
+        th, td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
+        th { background: #f4f8fb; color: var(--deep-blue); }
+        .highlight { background: rgba(0, 170, 255, 0.05); font-weight: bold; border-left: 4px solid var(--sky-blue); }
+        .red-tag { color: #ff5252; font-weight: bold; }
+        footer { background: #1a202c; color: white; padding: 40px; text-align: center; }
     </style>
 </head>
 <body>
@@ -35,20 +35,22 @@
         </ul>
     </nav>
     <div class="container">
-        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 30px;">選擇行程的智慧：購物站深度分析</h1>
+        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 30px;">選擇行程的智慧：補貼方案深度分析</h1>
         <table>
             <thead>
-                <tr><th>比較項目</th><th class="highlight">【和諧特惠】購物站補貼方案</th><th>【一般高價】全程無購物行程</th></tr>
+                <tr><th>比較項目</th><th class="highlight">【和諧特惠】含購物站補貼</th><th>【一般高價】全程無購物</th></tr>
             </thead>
             <tbody>
-                <tr><td>預算支出</td><td class="highlight"><span class="red-text">節省 40% - 60% 團費</span></td><td>需全額負擔成本，門檻較高</td></tr>
-                <tr><td>飯店等級</td><td class="highlight">保證升等五星飯店 / 國際品牌</td><td>多為標配四星或優選商旅</td></tr>
-                <tr><td>景點停留</td><td>中繼站約 40-60 分鐘購物兼休息</td><td>景點停留多出 15% 時間<br><span class="green-note">好處：適合愛好慢步調與攝影者</span></td></tr>
-                <tr><td>餐食豐富度</td><td class="highlight">補貼充裕，享特色龍蝦/大盛餐</td><td>受預算限制，多為標準團餐</td></tr>
-                <tr><td>購物壓力</td><td class="highlight">輕鬆選購特產，完全不強迫</td><td>完全無購物點<br><span class="green-note">好處：適合極度反感商業推廣者</span></td></tr>
-                <tr><td>綜合 CP 值</td><td class="highlight"><span class="red-text">⭐⭐⭐⭐⭐ (最強推薦)</span></td><td>⭐⭐⭐ (適合預算無上限者)</td></tr>
+                <tr><td>預算支出</td><td class="highlight"><span class="red-tag">節省 40% - 60% 團費</span></td><td>全額自費，門檻較高</td></tr>
+                <tr><td>飯店規格</td><td class="highlight">保證升等五星飯店</td><td>標配四星或優選商旅</td></tr>
+                <tr><td>行程時間</td><td>含 40-60 分鐘中繼休息</td><td>景點停留多出 15% 時間</td></tr>
+                <tr><td>餐食內容</td><td class="highlight">預算充沛，含龍蝦大盛餐</td><td>受預算限制，多為標準團餐</td></tr>
+                <tr><td>綜合 CP 值</td><td class="highlight"><span class="red-tag">⭐⭐⭐⭐⭐ (最強推薦)</span></td><td>⭐⭐⭐ (適合預算無上限者)</td></tr>
             </tbody>
         </table>
     </div>
+    <footer>
+        <p>和諧旅遊 © 2026 | 統一編號：54540709</p>
+    </footer>
 </body>
 </html>
