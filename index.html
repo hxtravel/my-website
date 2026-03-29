@@ -8,16 +8,16 @@
     <style>
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; color: #2d3748; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: #2d3748; line-height: 1.8; }
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 80px; }
-        .logo-img { height: 55px; width: auto; }
+        .logo-img { height: 55px; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
-        .hero { height: 50vh; background: linear-gradient(rgba(0,102,153,0.7), rgba(0,102,153,0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-        .section { padding: 80px 10%; background: white; margin: 40px auto; max-width: 1200px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .about-title { color: var(--deep-blue); font-size: 2.2rem; margin-bottom: 25px; text-align: center; }
-        footer { background: #1a202c; color: white; padding: 30px; text-align: center; }
+        .hero { height: 45vh; background: linear-gradient(rgba(0,102,153,0.7), rgba(0,102,153,0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        .about-section { padding: 80px 10%; background: white; margin: 40px auto; max-width: 1100px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h2.section-title { color: var(--deep-blue); font-size: 2.2rem; margin-bottom: 25px; text-align: center; }
+        footer { background: #1a202c; color: white; padding: 40px; text-align: center; width: 100%; margin-top: 50px; }
     </style>
 </head>
 <body>
@@ -31,18 +31,18 @@
             <li><a href="https://lin.ee/7WGlamz" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
-
     <header class="hero">
         <h1>收藏天空下的每一份感動</h1>
         <p>專業跨境旅遊規劃・深耕亞洲旅遊多年</p>
     </header>
-
-    <section id="about" class="section">
-        <h2 class="about-title">關於我們</h2>
-        <p><strong>和諧旅遊 Harmony Travel</strong> 成立於桃園，核心團隊擁有超過二十年的產業經驗。我們深知旅客對於「高品質」與「合理預算」的雙重追求，因此開創了資源補貼模式。</p>
-        <p>我們透過與優質特產廠商合作，換取旅遊補貼，直接將這份資源回饋在您的住宿飯店與餐食品質上。在和諧，我們堅持誠信、透明，讓每一趟旅程都能達到性價比的最優平衡。</p>
+    <section class="about-section">
+        <h2 class="section-title">關於我們</h2>
+        <p><strong>和諧旅遊 Harmony Travel</strong> 核心團隊擁有超過二十年的產業經驗。我們深知旅客對於高品質與合理預算的追求，因此開創了資源補貼模式。</p>
+        <p>我們透過與在地特產廠商合作，換取旅遊補貼，直接回饋在飯店與餐食品質上。在和諧，我們堅持誠信透明，讓每一趟旅程都能達到性價比的最優平衡。</p>
     </section>
-
-    <footer><p>&copy; 2026 和諧旅遊 | 統編：54540709</p></footer>
+    <footer>
+        <p>和諧旅遊 © 2026 | 聯絡電話：0932-273645</p>
+        <p>統一編號：54540709 | 觀光署執照編號：754100</p>
+    </footer>
 </body>
 </html>
