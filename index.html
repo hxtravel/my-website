@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>和諧旅遊 | 東北亞、東南亞旅遊專家</title>
+    <title>和諧旅遊 | 收藏世界的美好 - 東北亞、東南亞旅遊專家</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -12,6 +12,7 @@
             --line-green: #06c755;
             --light-bg: #f8fafc;
             --white: #ffffff;
+            --text-gray: #4a5568;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,66 +21,58 @@
         /* 導航列 */
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); height: 80px; }
         .logo-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-img { height: 50px; width: auto; object-fit: contain; }
+        .logo-img { height: 55px; width: auto; object-fit: contain; }
 
         .nav-links { list-style: none; display: flex; align-items: center; height: 100%; }
         .nav-links > li { margin-left: 30px; position: relative; height: 100%; display: flex; align-items: center; }
         .nav-links a { text-decoration: none; color: var(--brand-blue); font-weight: 700; transition: 0.3s; }
         .nav-links a:hover { color: var(--brand-red); }
 
-        /* 下拉選單 */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            top: 80px;
-            left: 0;
-            background-color: var(--white);
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            border-top: 3px solid var(--brand-red);
-            border-radius: 0 0 8px 8px;
-        }
-        .dropdown-content a { color: var(--brand-blue); padding: 12px 16px; display: block; font-size: 0.95rem; border-bottom: 1px solid #eee; }
-        .dropdown-content a:hover { background-color: #f1f5f9; }
-        .nav-links li:hover .dropdown-content { display: block; }
-
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; }
 
         /* 英雄區塊 */
         .hero { 
-            height: 40vh; 
+            height: 60vh; 
             background: linear-gradient(rgba(26, 54, 93, 0.6), rgba(26, 54, 93, 0.4)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center; padding: 0 20px;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; letter-spacing: 2px; }
+        .hero p { font-size: 1.4rem; font-weight: 300; }
 
-        /* Q&A 區塊 */
-        .content-section { padding: 60px 8%; background: var(--white); border-bottom: 1px solid #eee; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--brand-blue); position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--brand-red); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+        /* 核心價值區塊 */
+        .section { padding: 80px 8%; text-align: center; }
+        .section-title { font-size: 2.2rem; color: var(--brand-blue); margin-bottom: 50px; position: relative; }
+        .section-title::after { content: ''; width: 50px; height: 4px; background: var(--brand-red); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
 
-        .qa-container { max-width: 900px; margin: 0 auto; }
-        .qa-item { margin-bottom: 20px; padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--brand-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-        .qa-q { font-weight: bold; color: var(--brand-red); font-size: 1.1rem; margin-bottom: 12px; display: flex; align-items: flex-start; }
-        .qa-q span { margin-right: 10px; }
-        .qa-a { color: #4a5568; line-height: 1.8; padding-left: 28px; }
-        .qa-a strong { color: var(--brand-blue); }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .feature-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.03); transition: 0.3s; }
+        .feature-card:hover { transform: translateY(-10px); }
+        .feature-icon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+        .feature-card h3 { color: var(--brand-blue); margin-bottom: 15px; }
 
-        /* 關於我們 */
-        .about-box { max-width: 900px; margin: 0 auto; text-align: center; line-height: 2; color: #555; }
+        /* 服務流程 */
+        .process-bg { background: var(--brand-blue); color: white; }
+        .process-bg .section-title { color: white; }
+        .process-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+        .process-item { flex: 1; min-width: 200px; padding: 20px; position: relative; }
+        .process-step { font-size: 3rem; font-weight: bold; opacity: 0.2; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
+
+        /* Q&A 區塊 - 照抄優化 */
+        .qa-container { max-width: 900px; margin: 0 auto; text-align: left; }
+        .qa-item { margin-bottom: 20px; padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--brand-blue); }
+        .qa-q { font-weight: bold; color: var(--brand-red); font-size: 1.1rem; margin-bottom: 10px; }
+        .qa-a { color: var(--text-gray); line-height: 1.8; }
 
         /* 頁尾 */
         footer { background: #1a202c; color: #fff; padding: 60px 8% 30px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; text-align: left; }
         .cert-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; font-size: 0.9rem; border: 1px solid rgba(255,255,255,0.1); }
-        .contact-btn { display: inline-block; background: var(--line-green); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
-        .contact-btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(6, 199, 85, 0.3); }
+        .contact-btn { display: inline-block; background: var(--line-green); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; }
 
         @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
-            .hero h1 { font-size: 2rem; }
-            .content-section { padding: 40px 5%; }
         }
     </style>
 </head>
@@ -91,13 +84,7 @@
         </a>
         <ul class="nav-links">
             <li><a href="#">首頁</a></li>
-            <li>
-                <a href="#">最新行程 ▾</a>
-                <div class="dropdown-content">
-                    <a href="#">東北亞旅遊 (日韓、中)</a>
-                    <a href="#">東南亞旅遊 (泰越菲)</a>
-                </div>
-            </li>
+            <li><a href="#services">服務項目</a></li>
             <li><a href="#qa">常見問題</a></li>
             <li><a href="#about">關於我們</a></li>
             <li><a href="https://lin.ee/7WGlamz" target="_blank" class="nav-line-btn">LINE 諮詢</a></li>
@@ -106,73 +93,125 @@
 
     <header class="hero">
         <h1>收藏世界的美好</h1>
-        <p>專業跨境旅遊規劃・為您打造完美的旅行回憶</p>
+        <p>專業跨境旅遊規劃・打造有溫度的旅行回憶</p>
     </header>
 
-    <section class="content-section" id="qa">
-        <h2 class="section-title">常見問題 Q&A</h2>
-        <div class="qa-container">
-            
-            <div class="qa-item">
-                <div class="qa-q"><span>Q1：</span>和諧旅行社是合法立案的嗎？付錢有保障嗎？</div>
-                <div class="qa-a"><strong>絕對合法，誠信第一。</strong> 我們領有政府核發的旅行業執照，並依法投保「履約保證保險」與「旅行業責任險」。每一筆交易皆開立正式收據，您的旅遊權益受法律完整保障。</div>
+    <section class="section">
+        <h2 class="section-title">為什麼選擇和諧旅遊？</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-icon">🤝</span>
+                <h3>和諧和諧</h3>
+                <p>我們致力於創造旅客、當地文化與自然環境之間的美好共鳴，讓每一次旅程都充滿溫馨感。</p>
             </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q2：</span>如果行程中遇到突發狀況，你們會處理嗎？</div>
-                <div class="qa-a"><strong>專業領隊，全程守護。</strong> 我們嚴選經驗豐富的隨團領隊，並設有 24 小時緊急聯絡專線。不論在國內外遇到任何困難，我們都會以最高效率為您排除萬難。</div>
+            <div class="feature-card">
+                <span class="feature-icon">🔥</span>
+                <h3>熱情服務</h3>
+                <p>對旅遊的熱愛是我們的靈魂，從諮詢到出發，您能感受到我們無微不至的關懷與專業。</p>
             </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q3：</span>網站上的價格是真的嗎？會有隱藏費用嗎？</div>
-                <div class="qa-a"><strong>標價清晰，絕無隱藏。</strong> 我們堅持報價透明化，網頁標價即為實際成本。除了行程中標記的個人消費或小費外，絕不額外收費，讓您預算好控管。</div>
+            <div class="feature-card">
+                <span class="feature-icon">🏆</span>
+                <h3>專業規劃</h3>
+                <p>深耕東北亞(日韓中)與東南亞多年，我們不只賣行程，更為您量身打造專屬的旅遊劇本。</p>
             </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q4：</span>為什麼你們的團費可以比市場行情更便宜？</div>
-                <div class="qa-a"><strong>購物補貼，回饋團費。</strong> 我們與當地特色店家合作，利用進站推廣換取廠家的廣告回饋金。我們選擇將這些補貼直接折抵在團費上，讓您能以驚喜價享受同等級的旅遊品質。</div>
-            </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q5：</span>進購物站會被強迫買東西嗎？如果不買會被困住嗎？</div>
-                <div class="qa-a"><strong>絕對不強迫，消費隨心。</strong> 購物站僅提供在地特色體驗（如土產、手工藝），買與不買完全由您決定。領隊與導遊嚴禁強迫行為，您可以放鬆地聽介紹、吹冷氣，當作旅途休息站，完全無壓力。</div>
-            </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q6：</span>便宜團的食宿品質會不會很差？</div>
-                <div class="qa-a"><strong>預算減半，品質不減。</strong> 團費降低是因為有店家補貼，並非犧牲食宿標準。我們依然嚴選優質飯店與道地美食，確保您的旅遊體驗維持在高標水準。</div>
-            </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q7：</span>如果我想參加完全「無購物」的行程，你們有提供嗎？</div>
-                <div class="qa-a"><strong>多元選擇，任您挑選。</strong> 我們同時提供「特惠購物團」與「豪華無購物團」。您可以根據預算與習慣彈性選擇。對我們而言，誠實告知購物資訊，才是對客戶最大的尊重。</div>
-            </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q8：</span>報名付完訂金後，多久可以確認成行？</div>
-                <div class="qa-a"><strong>24小時快速回覆。</strong> 專業客服保證在工作日內 24 小時內與您聯繫，確認機位與成團狀況，資訊透明、效率最高。</div>
-            </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q9：</span>如果報名人數不足無法成團怎麼辦？</div>
-                <div class="qa-a"><strong>保障出發，方案透明。</strong> 若未達人數，我們最慢會在出發前 7 天通知。您可以選擇「全額退費」、「改期建議」或「轉換推薦行程」，我們絕不拖延您的假期規劃。</div>
-            </div>
-
-            <div class="qa-item">
-                <div class="qa-q"><span>Q10：</span>我有特殊飲食需求（如素食），可以安排嗎？</div>
-                <div class="qa-a"><strong>貼心安排，成行不難。</strong> 只要在報名時告知專員，不論是飲食禁忌、蜜月需求或特殊慶祝，我們都會預先與飯店及餐廳溝通妥當，讓您出國吃得開心又安心。</div>
-            </div>
-
         </div>
     </section>
 
-    <section class="content-section" id="about">
+    <section class="section" id="services" style="background: #fff;">
+        <h2 class="section-title">我們的服務項目</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>團體旅遊規劃</h3>
+                <p>精選東北亞與東南亞熱門路線，提供食宿升級、行程透明的高 CP 值團體旅遊。</p>
+            </div>
+            <div class="feature-card">
+                <h3>客製化包團</h3>
+                <p>企業員工旅遊、家族聚會、好友出團，一通 LINE 電話，專員立即為您規劃專屬行程。</p>
+            </div>
+            <div class="feature-card">
+                <h3>全球代訂服務</h3>
+                <p>代訂機票、各國精選酒店、旅遊交通工具及各類票券，解決您出國的所有瑣事。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section process-bg">
+        <h2 class="section-title">服務流程</h2>
+        <div class="process-grid">
+            <div class="process-item">
+                <div class="process-step">01</div>
+                <h4>線上諮詢</h4>
+                <p>透過 LINE 告知需求</p>
+            </div>
+            <div class="process-item">
+                <div class="process-step">02</div>
+                <h4>方案規劃</h4>
+                <p>專員提供客製行程與報價</p>
+            </div>
+            <div class="process-item">
+                <div class="process-step">03</div>
+                <h4>確認成行</h4>
+                <p>完成簽約並交付訂金</p>
+            </div>
+            <div class="process-item">
+                <div class="process-step">04</div>
+                <h4>開心出發</h4>
+                <p>專業領隊全程守護您的旅程</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="qa">
+        <h2 class="section-title">常見問題 Q&A</h2>
+        <div class="qa-container">
+            <div class="qa-item">
+                <div class="qa-q">Q1：和諧旅行社是合法立案的嗎？付錢有保障嗎？</div>
+                <div class="qa-a"><strong>絕對合法，誠信第一。</strong> 我們領有政府核發的旅行業執照，並依法投保「履約保證保險」與「旅行業責任險」。每一筆交易皆開立正式收據，您的旅遊權益受法律完整保障。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q2：如果行程中遇到突發狀況，你們會處理嗎？</div>
+                <div class="qa-a"><strong>專業領隊，全程守護。</strong> 我們嚴選經驗豐富的隨團領隊，並設有 24 小時緊急聯絡專線。不論在國內外遇到任何困難，我們都會以最高效率為您排除萬難。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q3：網站上的價格是真的嗎？會有隱藏費用嗎？</div>
+                <div class="qa-a"><strong>標價清晰，絕無隱藏。</strong> 我們堅持報價透明化，網頁標價即為實際成本。除了行程中標記的個人消費或小費外，絕不額外收費，讓您預算好控管。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q4：為什麼你們的團費可以比市場行情更便宜？</div>
+                <div class="qa-a"><strong>購物補貼，回饋團費。</strong> 我們與當地特色店家合作，利用進站推廣換取廠家的廣告回饋金。我們選擇將這些補貼直接折抵在團費上，讓您能以驚喜價享受同等級的旅遊品質。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q5：進購物站會被強迫買東西嗎？如果不買會被困住嗎？</div>
+                <div class="qa-a"><strong>絕對不強迫，消費隨心。</strong> 購物站僅提供在地特色體驗（如土產、手工藝），買與不買完全由您決定。領隊與導遊嚴禁強迫行為，您可以放鬆地聽介紹、吹冷氣，當作旅途休息站，完全無壓力。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q6：便宜團的食宿品質會不會很差？</div>
+                <div class="qa-a"><strong>預算減半，品質不減。</strong> 團費降低是因為有店家補貼，並非犧牲食宿標準。我們依然嚴選優質飯店與道地美食，確保您的旅遊體驗維持在高標水準。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q7：如果我想參加完全「無購物」的行程，你們有提供嗎？</div>
+                <div class="qa-a"><strong>多元選擇，任您挑選。</strong> 我們同時提供「特惠購物團」與「豪華無購物團」。您可以根據預算與習慣彈性選擇。對我們而言，誠實告知購物資訊，才是對客戶最大的尊重。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q8：報名付完訂金後，多久可以確認成行？</div>
+                <div class="qa-a"><strong>24小時快速回覆。</strong> 專業客服保證在工作日內 24 小時內與您聯繫，確認機位與成團狀況，資訊透明、效率最高。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q9：如果報名人數不足無法成團怎麼辦？</div>
+                <div class="qa-a"><strong>保障出發，方案透明。</strong> 若未達人數，我們最慢會在出發前 7 天通知。您可以選擇「全額退費」、「改期建議」或「轉換推薦行程」，我們絕不拖延您的假期規劃。</div>
+            </div>
+            <div class="qa-item">
+                <div class="qa-q">Q10：我有特殊飲食需求（如素食），可以安排嗎？</div>
+                <div class="qa-a"><strong>貼心安排，成行不難。</strong> 只要在報名時告知專員，不論是飲食禁忌、蜜月需求或特殊慶祝，我們都會預先與飯店及餐廳溝通妥當，讓您出國吃得開心又安心。</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="about" style="background: #f1f5f9;">
         <h2 class="section-title">關於我們</h2>
-        <div class="about-box">
-            <p><strong>和諧旅遊 Harmony Travel</strong> 是一群熱愛旅遊的專業團隊所組成。</p>
-            <p>我們深信旅行不應只是奢侈的享受，而是一種生活的和和諧與平衡。</p>
-            <p>透過創新的經營模式，我們連結優質地接與特色廠家，將資源轉化為團費折扣，</p>
-            <p>讓每位旅客都能以最合理的價格，收藏世界最美好的風景。</p>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <p><strong>和諧旅遊 Harmony Travel</strong> 是一支由資深旅遊專家組成的熱血團隊。</p>
+            <p>我們深信旅行的意義在於人與人的連結，我們不只帶您看風景，更帶您感受世界的溫度。憑藉著透明的資訊、豐富的資源、以及對旅遊品質的堅持，和諧旅遊已成為數千位旅客的首選夥伴。</p>
             <p style="margin-top: 20px; font-weight: bold; color: var(--brand-blue);">📍 桃園市桃園區朝陽街一段92號</p>
         </div>
     </section>
@@ -189,16 +228,16 @@
                 <h4>官方認證</h4>
                 <div class="cert-box">
                     <p>● 觀光署註冊編號：<strong>754100</strong></p>
-                    <p>● 品保協會會員：<strong>桃01880001</strong></p>
+                    <p>● 旅行業品質保障協會：<strong>桃01880001</strong></p>
                 </div>
             </div>
             <div class="footer-info">
-                <h4>即時客服</h4>
-                <p>如有任何旅遊需求，請洽官方 LINE 帳號</p>
+                <h4>立即預約行程</h4>
+                <p>專員將在 LINE 為您提供專業規劃服務</p>
                 <a href="https://lin.ee/7WGlamz" target="_blank" class="contact-btn">🟢 立即加入 LINE 客服</a>
             </div>
         </div>
-        <div class="copyright">&copy; 2026 和諧旅遊 版權所有 | 誠信經營・收藏世界</div>
+        <div class="copyright">&copy; 2026 和諧旅遊 版權所有 | 誠信規劃・收藏世界</div>
     </footer>
 
 </body>
