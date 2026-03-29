@@ -14,12 +14,13 @@
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
         .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
-        .container { max-width: 1000px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th, td { padding: 20px; border-bottom: 1px solid #eee; text-align: left; }
-        th { background: #f4f8fb; color: var(--deep-blue); }
-        .best-choice { background: rgba(0, 170, 255, 0.05); font-weight: bold; border-left: 3px solid var(--sky-blue); }
-        .red-tag { color: #ff5252; font-weight: bold; }
+        .container { max-width: 1050px; margin: 60px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; min-width: 800px; }
+        th, td { padding: 22px 15px; border-bottom: 1px solid #edf2f7; text-align: left; }
+        th { background: #f8fafc; color: var(--deep-blue); }
+        .best { background: rgba(0, 170, 255, 0.05); font-weight: bold; border-left: 3px solid var(--sky-blue); }
+        .tag-red { color: #ff5252; font-weight: bold; }
+        .tag-green { color: #2f855a; font-size: 0.9rem; font-style: italic; }
     </style>
 </head>
 <body>
@@ -34,18 +35,56 @@
         </ul>
     </nav>
     <div class="container">
-        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 30px;">補貼行程 vs 無購物行程</h1>
+        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 30px;">聰明旅人的選擇：深度對照表</h1>
         <table>
             <thead>
-                <tr><th>比較項目</th><th class="best-choice">【和諧特惠】含購物站補貼</th><th>【一般高價】全程無購物</th></tr>
+                <tr>
+                    <th>比較項目</th>
+                    <th class="best">【和諧特惠】含購物站補貼</th>
+                    <th>【一般高價】全程無購物</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>預算支出</td><td class="best-choice"><span class="red-tag">省下 40% - 60% 團費</span></td><td>全額負擔成本，門檻較高</td></tr>
-                <tr><td>飯店規格</td><td class="best-choice">升等五星級飯店 / 國際連鎖品牌</td><td>多為標準商旅或四星標配</td></tr>
-                <tr><td>景點停留</td><td>每站購物兼休息停留約 40-60 分</td><td>景點停留多出約 15% 時間</td></tr>
-                <tr><td>體力消耗</td><td class="best-choice">有吹冷氣中繼站，適合長輩小孩</td><td>景點拉車連貫，體力消耗較大</td></tr>
-                <tr><td>餐食內容</td><td class="best-choice">預算充足，可享龍蝦餐/在地大盛</td><td>受限成本，多為標配團餐</td></tr>
-                <tr><td>綜合 CP 值</td><td class="best-choice"><span class="red-tag">⭐⭐⭐⭐⭐ (壓倒性推薦)</span></td><td>⭐⭐⭐ (適合預算無上限者)</td></tr>
+                <tr>
+                    <td>預算支出</td>
+                    <td class="best"><span class="tag-red">節省 40% - 60% 團費</span></td>
+                    <td>全額自行負擔，門檻較高</td>
+                </tr>
+                <tr>
+                    <td>飯店規格</td>
+                    <td class="best">保證升等五星飯店 / 國際品牌</td>
+                    <td>多為標準商旅或標配四星</td>
+                </tr>
+                <tr>
+                    <td>餐食內容</td>
+                    <td class="best">經費充沛，享龍蝦餐/在地大盛</td>
+                    <td>受限成本，多為一般團餐</td>
+                </tr>
+                <tr>
+                    <td>行程節奏</td>
+                    <td class="best"><strong>有中繼休息點</strong><br>每 2 小時有吹冷氣休息時間</td>
+                    <td><strong>景點停留多出 15%</strong><br><span class="tag-green">好處：適合愛攝影的人</span></td>
+                </tr>
+                <tr>
+                    <td>在地連結</td>
+                    <td class="best">深度了解地方產物文化</td>
+                    <td>純景點觀光，較少人文互動</td>
+                </tr>
+                <tr>
+                    <td>領隊素質</td>
+                    <td class="best">資深高 EQ 領隊，服務更有活力</td>
+                    <td>例行公事化服務，熱誠感一般</td>
+                </tr>
+                <tr>
+                    <td>購物感受</td>
+                    <td class="best">輕鬆選購，完全無壓力</td>
+                    <td>完全無推銷環境<br><span class="tag-green">好處：適合極度反感推廣的人</span></td>
+                </tr>
+                <tr>
+                    <td>性價比 (CP值)</td>
+                    <td class="best"><span class="tag-red">⭐⭐⭐⭐⭐ (壓倒性推薦)</span></td>
+                    <td>⭐⭐⭐ (適合預算無上限者)</td>
+                </tr>
             </tbody>
         </table>
     </div>
