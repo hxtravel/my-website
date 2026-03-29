@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>深度行程分析 | 和諧旅遊</title>
+    <title>行程深度分析 | 和諧旅遊</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); padding: 0; margin: 0; }
-        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; }
-        .table-container { max-width: 1100px; margin: 50px auto; background: white; padding: 40px; border-radius: 20px; overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 20px; border: 1px solid #eee; text-align: center; }
-        th { background: #f4f8fb; color: var(--deep-blue); }
-        .recommend { background: rgba(0, 170, 255, 0.05); border: 2px solid var(--sky-blue); font-weight: bold; }
-        .star { color: #ff5252; font-size: 1.2rem; }
-        footer { background: #1a202c; color: white; padding: 40px; text-align: center; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); margin: 0; }
+        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .nav-links { list-style: none; display: flex; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: bold; }
+        .container { max-width: 1100px; margin: 60px auto; background: white; padding: 50px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: var(--deep-blue); margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; overflow: hidden; }
+        th, td { padding: 25px 15px; border-bottom: 1px solid #edf2f7; text-align: center; }
+        th { background: #f8fafc; color: var(--deep-blue); font-size: 1.2rem; }
+        .good { background: rgba(0, 170, 255, 0.05); border-left: 2px solid var(--sky-blue); border-right: 2px solid var(--sky-blue); font-weight: bold; }
+        .best { color: #ff5252; font-size: 1.3rem; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="logo.jpg" style="height:50px;"></a>
-        <div style="display:flex; gap:20px;"><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="qa.html">常見問題</a></div>
+        <a href="index.html"><img src="投.jpg" style="height:50px;"></a>
+        <div class="nav-links">
+            <a href="index.html">首頁</a>
+            <a href="about.html">關於我們</a>
+            <a href="qa.html">常見問題</a>
+        </div>
     </nav>
-    <div class="table-container">
-        <h1 style="text-align:center; color:var(--deep-blue); margin-bottom:30px;">為什麼選擇補貼行程？深度數據對比</h1>
+    <div class="container">
+        <h1>為什麼補貼行程是「聰明首選」？</h1>
         <table>
             <thead>
-                <tr><th>比較項目</th><th class="recommend">【和諧推薦】有購物補貼</th><th>【一般昂貴】全程無購物</th></tr>
+                <tr><th>分析維度</th><th class="good">【和諧特惠】有購物站補貼</th><th>【一般昂貴】全程無購物行程</th></tr>
             </thead>
             <tbody>
-                <tr><td>實質支出</td><td class="recommend"><span class="star">省下約 40%-60%</span><br>預算可留作私人購物</td><td>負擔全額成本，壓力較重</td></tr>
-                <tr><td>食宿規格</td><td class="recommend"><strong>升等五星/龍蝦餐</strong><br>廠商補貼讓硬體直接升級</td><td>受限預算，多為標配飯店</td></tr>
-                <tr><td>導遊熱誠</td><td class="recommend"><strong>服務更有活力</strong><br>有動力解決旅客各項需求</td><td>例行公事化，熱誠一般</td></tr>
-                <tr><td>體力恢復</td><td class="recommend"><strong>購物站為吹冷氣休息站</strong><br>中繼休息，避免拉車過累</td><td>連環景點操勞，較無休息點</td></tr>
-                <tr><td>在地互動</td><td class="recommend">可深度了解特產歷史，互動豐富</td><td>純景點拍照，較無人文交流</td></tr>
+                <tr><td>實質支出</td><td class="good"><span class="best">省下 40% - 60%</span><br>預算留作私人購物</td><td>需負擔 100% 成本</td></tr>
+                <tr><td>食宿規格</td><td class="good"><strong>五星級飯店 / 豪華宴席</strong><br>廠商補貼直接升等</td><td>受預算限制，多為標配商旅</td></tr>
+                <tr><td>導遊熱誠</td><td class="good"><strong>高 EQ、極致服務</strong><br>更有動力照顧旅客情緒</td><td>中規中矩，缺乏互動熱誠</td></tr>
+                <tr><td>休息頻率</td><td class="good"><strong>中繼站舒適吹冷氣</strong><br>避免長途拉車過於疲憊</td><td>行程緊湊，體力消耗極大</td></tr>
+                <tr><td>在地互動</td><td class="good">深度了解特產歷史文化</td><td>僅有拍照，缺乏在地連結</td></tr>
+                <tr><td>性價比</td><td class="good"><span class="best">⭐⭐⭐⭐⭐<br>聰明旅人的最優選</span></td><td>⭐⭐⭐<br>適合不計成本者</td></tr>
             </tbody>
         </table>
     </div>
-    <footer>&copy; 2026 和諧旅遊 版權所有</footer>
 </body>
 </html>
