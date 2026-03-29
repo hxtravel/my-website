@@ -6,33 +6,44 @@
     <title>關於我們 | 和諧旅遊</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; padding: 0; margin: 0; }
-        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .container { max-width: 900px; margin: 60px auto; background: white; padding: 50px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        h1 { color: var(--deep-blue); margin-bottom: 30px; text-align: center; }
-        .highlight-box { border-left: 5px solid var(--sky-blue); padding-left: 20px; background: #f9f9f9; padding: 20px; margin: 20px 0; }
-        footer { background: #1a202c; color: white; padding: 40px; text-align: center; margin-top: 60px; }
+        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; }
+        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .logo-img { height: 60px; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
+        .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; }
+        
+        .container { max-width: 900px; margin: 60px auto; background: white; padding: 50px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
+        h1 { color: var(--deep-blue); text-align: center; margin-bottom: 30px; }
+        .highlight-box { background: #f4f9ff; border-left: 6px solid var(--sky-blue); padding: 30px; margin: 30px 0; border-radius: 0 15px 15px 0; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="logo.jpg" style="height:50px;"></a>
-        <div style="display:flex; gap:20px;">
-            <a href="index.html">首頁</a>
-            <a href="analysis.html">行程分析</a>
-            <a href="qa.html">常見問題</a>
-        </div>
+        <a href="index.html"><img src="投.jpg" class="logo-img"></a>
+        <ul class="nav-links">
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="analysis.html">行程分析</a></li>
+            <li><a href="qa.html">常見問題</a></li>
+            <li><a href="https://lin.ee/7WGlamz" class="nav-line-btn">LINE 諮詢</a></li>
+        </ul>
     </nav>
     <div class="container">
-        <h1>關於我們</h1>
-        <p><strong>和諧旅遊 Harmony Travel</strong> 成立於桃園，由深耕產業超過 20 年的職人團隊組成。我們致力於創造「三方共贏」的旅遊模式。</p>
+        <h1>深耕旅遊 20 年的執人精神</h1>
+        <p><strong>和諧旅遊 Harmony Travel</strong> 成立於桃園，我們的核心團隊皆是在旅遊產業摸爬滾打超過二十年的資深職人。對我們而言，旅行不應該是流水線上的商品，而是一場富有溫度的探索之旅。</p>
         <div class="highlight-box">
-            <h3>為什麼我們與眾不同？</h3>
-            <p>傳統高價團讓人卻步，超低價陷阱又讓人不安。我們選擇「透明合作」：將在地廠商贊助的廣告經費直接回饋給旅客，讓您用聰明的預算，享受超越標配的五星飯店與道地餐食。</p>
+            <h3>核心經營模式：資源共享與回饋</h3>
+            <p>傳統高價團的門檻常讓人卻步，而超低價陷阱又讓人不安。我們開創了透明且創新的經營模式：與在地特色優質廠商深度合作，將廠商贊助的廣告經費直接回饋給旅客。我們將這份「資源補貼」轉化為更好的飯店房間、更精緻的道地餐食，讓您用聰明的預算，享受超標的驚喜。</p>
         </div>
-        <p>我們的領隊皆具備豐富的高 EQ 處理經驗，確保您在旅途中的情緒與安全得到雙重守護。在和諧旅遊，我們不只是帶您看風景，更是帶您感受世界的溫度。</p>
+        <h3>我們的三大承諾</h3>
+        <ul style="margin-left: 20px;">
+            <li><strong>透明報價：</strong> 絕無隱藏費用，每一分錢都花在刀口上。</li>
+            <li><strong>專業領隊：</strong> 嚴選經驗豐富的高 EQ 領隊，全程守護您的安全與情緒。</li>
+            <li><strong>和諧體驗：</strong> 尊重在地文化，創造有溫度的旅行劇本，達成旅客、旅行社、在地廠商三方共贏。</li>
+        </ul>
     </div>
-    <footer>&copy; 2026 和諧旅遊 版權所有</footer>
 </body>
 </html>
