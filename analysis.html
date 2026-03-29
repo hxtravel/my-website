@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深度行程分析 | 和諧旅遊</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); padding: 0; margin: 0; }
+        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; }
+        .table-container { max-width: 1100px; margin: 50px auto; background: white; padding: 40px; border-radius: 20px; overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 20px; border: 1px solid #eee; text-align: center; }
+        th { background: #f4f8fb; color: var(--deep-blue); }
+        .recommend { background: rgba(0, 170, 255, 0.05); border: 2px solid var(--sky-blue); font-weight: bold; }
+        .star { color: #ff5252; font-size: 1.2rem; }
+        footer { background: #1a202c; color: white; padding: 40px; text-align: center; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html"><img src="logo.jpg" style="height:50px;"></a>
+        <div style="display:flex; gap:20px;"><a href="index.html">首頁</a><a href="about.html">關於我們</a><a href="qa.html">常見問題</a></div>
+    </nav>
+    <div class="table-container">
+        <h1 style="text-align:center; color:var(--deep-blue); margin-bottom:30px;">為什麼選擇補貼行程？深度數據對比</h1>
+        <table>
+            <thead>
+                <tr><th>比較項目</th><th class="recommend">【和諧推薦】有購物補貼</th><th>【一般昂貴】全程無購物</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>實質支出</td><td class="recommend"><span class="star">省下約 40%-60%</span><br>預算可留作私人購物</td><td>負擔全額成本，壓力較重</td></tr>
+                <tr><td>食宿規格</td><td class="recommend"><strong>升等五星/龍蝦餐</strong><br>廠商補貼讓硬體直接升級</td><td>受限預算，多為標配飯店</td></tr>
+                <tr><td>導遊熱誠</td><td class="recommend"><strong>服務更有活力</strong><br>有動力解決旅客各項需求</td><td>例行公事化，熱誠一般</td></tr>
+                <tr><td>體力恢復</td><td class="recommend"><strong>購物站為吹冷氣休息站</strong><br>中繼休息，避免拉車過累</td><td>連環景點操勞，較無休息點</td></tr>
+                <tr><td>在地互動</td><td class="recommend">可深度了解特產歷史，互動豐富</td><td>純景點拍照，較無人文交流</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <footer>&copy; 2026 和諧旅遊 版權所有</footer>
+</body>
+</html>
