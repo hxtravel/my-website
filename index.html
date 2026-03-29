@@ -3,114 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>和諧旅遊 | 交通部觀光署甲種旅行社 754100</title>
+    <title>和諧旅遊 | 東北亞、東南亞旅遊專家</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --brand-green: #27ae60;
-            --dark-gray: #2c3e50;
-            --light-bg: #f9fbf9;
+            --brand-blue: #1a365d;
+            --brand-red: #e53e3e;
+            --line-green: #06c755;
+            --light-bg: #f8fafc;
             --white: #ffffff;
-            --accent-gold: #f39c12;
-            --line-color: #06c755;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--light-bg); color: #333; line-height: 1.8; scroll-behavior: smooth; }
 
-        /* 導航 */
-        nav { background: rgba(255,255,255,0.98); padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .logo { font-size: 1.6rem; font-weight: bold; color: var(--brand-green); text-decoration: none; display: flex; align-items: center; }
-        .nav-links { list-style: none; display: flex; align-items: center; }
-        .nav-links li { margin-left: 25px; }
-        .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--brand-green); }
-        .nav-line-btn { background: var(--line-color); color: white !important; padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; }
-        .nav-line-btn:hover { background: #05a346; transform: scale(1.05); }
+        /* 導航列 */
+        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); height: 80px; }
+        .logo-container { display: flex; align-items: center; text-decoration: none; }
+        .logo-img { height: 50px; width: auto; object-fit: contain; }
+
+        .nav-links { list-style: none; display: flex; align-items: center; height: 100%; }
+        .nav-links > li { margin-left: 30px; position: relative; height: 100%; display: flex; align-items: center; }
+        .nav-links a { text-decoration: none; color: var(--brand-blue); font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { color: var(--brand-red); }
+
+        /* 下拉選單 */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 80px;
+            left: 0;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--brand-red);
+            border-radius: 0 0 8px 8px;
+        }
+        .dropdown-content a {
+            color: var(--brand-blue);
+            padding: 12px 16px;
+            display: block;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #eee;
+        }
+        .dropdown-content a:hover { background-color: #f1f5f9; }
+        .nav-links li:hover .dropdown-content { display: block; }
+
+        .nav-line-btn { background: var(--line-green); color: white !important; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; }
 
         /* 英雄區塊 */
         .hero { 
-            height: 45vh; 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=1500&q=80');
+            height: 50vh; 
+            background: linear-gradient(rgba(26, 54, 93, 0.6), rgba(26, 54, 93, 0.4)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: 2px; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
 
-        /* Q&A 區塊 */
-        .qa-section { padding: 80px 8%; background: var(--white); }
-        .section-title { text-align: center; margin-bottom: 60px; font-size: 2.2rem; color: var(--dark-gray); position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 3px; background: var(--brand-green); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
-        
+        /* 內容區塊 */
+        .content-section { padding: 80px 8%; background: var(--white); border-bottom: 1px solid #eee; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.2rem; color: var(--brand-blue); position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--brand-red); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
+
         .qa-container { max-width: 900px; margin: 0 auto; }
-        .qa-item { margin-bottom: 30px; background: #fefefe; border: 1px solid #eee; border-radius: 10px; padding: 25px; transition: 0.3s; }
-        .qa-item:hover { border-color: var(--brand-green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        
-        .qa-q { font-size: 1.2rem; font-weight: bold; color: var(--brand-green); margin-bottom: 12px; display: flex; }
-        .qa-q::before { content: "Q"; background: var(--brand-green); color: white; min-width: 28px; height: 28px; display: flex; justify-content: center; align-items: center; border-radius: 50%; margin-right: 15px; font-size: 0.9rem; }
-        
-        .qa-a { font-size: 1.05rem; color: #555; padding-left: 43px; position: relative; }
-        .qa-a::before { content: "A"; font-weight: bold; color: var(--accent-gold); position: absolute; left: 15px; top: 0; }
+        .qa-item { margin-bottom: 25px; padding: 25px; background: #f8fafc; border-radius: 12px; border-left: 5px solid var(--brand-blue); }
+        .qa-q { font-weight: bold; color: var(--brand-red); font-size: 1.1rem; margin-bottom: 10px; }
+        .qa-a { color: #4a5568; line-height: 1.8; }
 
-        /* 底部資訊欄 */
-        footer { background: var(--dark-gray); color: #fff; padding: 70px 8% 30px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
-        
-        .footer-info h4 { color: var(--brand-green); margin-bottom: 25px; font-size: 1.3rem; border-left: 4px solid var(--brand-green); padding-left: 15px; }
-        .footer-info p { margin-bottom: 12px; font-size: 1rem; opacity: 0.85; }
-        
-        .cert-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; border: 1px dashed rgba(255,255,255,0.2); }
-        .cert-box p { font-size: 0.9rem; margin-bottom: 8px; color: #bdc3c7; }
-        .cert-box strong { color: #fff; }
-
-        .contact-btn { display: inline-block; background: var(--line-color); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; text-align: center; }
-        .contact-btn:hover { background: #05a346; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(6, 199, 85, 0.4); }
-
-        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 30px; font-size: 0.85rem; opacity: 0.5; }
+        /* 頁尾 */
+        footer { background: #1a202c; color: #fff; padding: 70px 8% 30px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+        .cert-box { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 8px; font-size: 0.9rem; line-height: 2; border: 1px solid rgba(255,255,255,0.1); }
+        .contact-btn { display: inline-block; background: var(--line-green); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 20px; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
             .nav-links { display: none; }
-            .footer-grid { text-align: center; }
-            .footer-info h4 { border-left: none; padding-left: 0; }
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#" class="logo">🌿 和諧旅遊</a>
+        <a href="#" class="logo-container">
+            <img src="logo.jpg" alt="和諧旅遊 LOGO" class="logo-img">
+        </a>
         <ul class="nav-links">
-            <li><a href="#qa">常見問題 QA</a></li>
+            <li><a href="#">首頁</a></li>
+            <li>
+                <a href="#">最新行程 ▾</a>
+                <div class="dropdown-content">
+                    <a href="#">東北亞旅遊 (日韓、中)</a>
+                    <a href="#">東南亞旅遊 (泰越菲)</a>
+                </div>
+            </li>
+            <li><a href="#qa">常見問題</a></li>
+            <li><a href="#about">關於我們</a></li>
             <li><a href="https://lin.ee/7WGlamz" target="_blank" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
 
     <header class="hero">
-        <h1>和諧旅遊 Harmony Travel</h1>
-        <p>專業、和諧、值得信賴的甲種旅行社</p>
+        <h1>收藏世界的美好</h1>
+        <p>專業跨境旅遊規劃・為您打造完美的旅行回憶</p>
     </header>
 
-    <section class="qa-section" id="qa">
+    <section class="content-section" id="qa">
         <h2 class="section-title">常見問題 Q&A</h2>
         <div class="qa-container">
             <div class="qa-item">
-                <div class="qa-q">和諧旅遊提供哪些服務？</div>
-                <div class="qa-a">我們提供包含國內外旅遊規劃、代訂機票、各國酒店預訂、各類旅遊簽證辦理，以及客製化包團、企業員工旅遊等專業服務。</div>
+                <div class="qa-q">Q: 請問和諧旅遊有提供哪些代訂服務？</div>
+                <div class="qa-a">我們提供全方位的旅遊代訂服務，包含國內外機票、各國飯店住宿、遊樂園門票以及各類旅遊交通工具（如包車、租車）預訂。</div>
             </div>
             <div class="qa-item">
-                <div class="qa-q">關於旅遊保險的保障？</div>
-                <div class="qa-a">身為政府合法立案旅行社，我們依法投保「旅行業履約保證保險」及「旅行業責任保險」，為每位參團旅客提供法定之安全保障。</div>
+                <div class="qa-q">Q: 關於旅遊保險的保障內容？</div>
+                <div class="qa-a">和諧旅遊均依觀光署規定投保「旅行業履約保證保險」與「旅行業責任保險」，為每一位旅客提供最基本的安全保障。建議旅客可視個人需求額外加保旅遊平安險或旅遊不便險。</div>
             </div>
             <div class="qa-item">
-                <div class="qa-q">如何預訂行程與諮詢？</div>
-                <div class="qa-a">我們統一透過官方 LINE 進行諮詢與服務，由專員即時為您解答與規劃。付款方式支持現金、銀行轉帳等多樣化選擇。</div>
+                <div class="qa-q">Q: 如何辦理旅遊退費或變更行程？</div>
+                <div class="qa-a">退費基準均依照交通部觀光署頒布之「國內/國外旅遊定型化契約」辦理。如需變更行程，請儘速與本公司服務人員聯繫，我們將協助您處理相關行政手續。</div>
             </div>
             <div class="qa-item">
-                <div class="qa-q">取消行程如何退費？</div>
-                <div class="qa-a">所有旅遊契約變更與取消，均嚴格依照交通部觀光署頒布之「國內/國外旅遊定型化契約」之退費基準辦理，保障旅客權益。</div>
+                <div class="qa-q">Q: 是否有提供客製化包團服務？</div>
+                <div class="qa-a">有的！不論是家族旅行、公司員工旅遊或是好友聚會，我們均可根據您的預算與需求，量身打造專屬的和諧旅程。</div>
             </div>
+        </div>
+    </section>
+
+    <section class="content-section" id="about">
+        <h2 class="section-title">關於我們</h2>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <p><strong>和諧旅遊 Harmony Travel</strong> 堅持「誠信、專業、和諧」的服務理念。我們深耕亞洲旅遊多年，致力於為每一位旅客打造最安心的跨境旅遊經驗，提供有溫度的旅遊服務。</p>
+            <p style="margin-top: 20px; font-weight: bold;">地址：桃園市桃園區朝陽街一段92號</p>
         </div>
     </section>
 
@@ -118,27 +142,25 @@
         <div class="footer-grid">
             <div class="footer-info">
                 <h4>公司資訊</h4>
-                <p><strong>和諧旅遊 Harmony Travel</strong></p>
-                <p>📍 地址：桃園市桃園區朝陽街一段92號</p>
-                <p>🆔 統一編號：<strong>54540709</strong></p>
+                <p>和諧旅遊 Harmony Travel</p>
+                <p>🆔 統一編號：54540709</p>
+                <p>📍 桃園市桃園區朝陽街一段92號</p>
             </div>
             <div class="footer-info">
-                <h4>官方認證與保障</h4>
+                <h4>官方認證</h4>
                 <div class="cert-box">
-                    <p>● 交通部觀光署 註冊編號：<strong>754100</strong></p>
+                    <p>● 觀光署註冊編號：<strong>754100</strong></p>
                     <p>● 營業種類：<strong>甲種旅行社</strong></p>
-                    <p>● 旅遊業品質保障協會 會員編號：<strong>桃01880001</strong></p>
+                    <p>● 品保協會會員：<strong>桃01880001</strong></p>
                 </div>
             </div>
             <div class="footer-info">
-                <h4>立即諮詢</h4>
-                <p>若有任何旅遊需求，請加入官方 LINE，我們將由專業領隊與顧問為您規劃旅程。</p>
+                <h4>聯繫客服</h4>
+                <p>如有任何旅遊需求，請加入官方 LINE 帳號</p>
                 <a href="https://lin.ee/7WGlamz" target="_blank" class="contact-btn">🟢 立即加入 LINE 客服</a>
             </div>
         </div>
-        <div class="copyright">
-            &copy; 2026 和諧旅遊 版權所有 | Harmony Travel Co., Ltd.
-        </div>
+        <div class="copyright">&copy; 2026 和諧旅遊 版權所有</div>
     </footer>
 
 </body>
