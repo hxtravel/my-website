@@ -3,84 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>夢幻假期 | 您的專屬旅行顧問</title>
+    <title>鴻禧旅行社 | 專業優質旅遊服務</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #ff7675;
-            --dark-color: #2d3436;
-            --light-bg: #f9f9f9;
-            --white: #ffffff;
+            --brand-blue: #2c3e50; /* 深藍專業色 */
+            --brand-gold: #f39c12; /* 點綴金黃色 */
+            --bg-light: #f4f7f6;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; line-height: 1.6; color: #333; scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-light); color: #333; line-height: 1.8; }
 
-        /* 導航欄 - 磨砂玻璃效果 */
-        nav { 
-            background: rgba(255, 255, 255, 0.8); 
-            backdrop-filter: blur(10px);
-            height: 80px; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 0 8%; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05); 
-        }
-        .logo { font-size: 1.8rem; font-weight: 700; color: var(--primary-color); letter-spacing: 1px; }
+        /* 導航 */
+        nav { background: #fff; padding: 1rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--brand-blue); display: flex; align-items: center; }
+        .logo span { color: var(--brand-gold); margin-right: 5px; }
         .nav-links { list-style: none; display: flex; }
-        .nav-links li { margin-left: 30px; }
-        .nav-links a { text-decoration: none; color: var(--dark-color); font-weight: 500; transition: 0.3s; }
-        .nav-links a:hover { color: var(--primary-color); }
+        .nav-links li { margin-left: 25px; }
+        .nav-links a { text-decoration: none; color: #444; font-weight: 500; transition: 0.3s; }
+        .nav-links a:hover { color: var(--brand-gold); }
 
-        /* 英雄區塊 - 更強的層次感 */
+        /* 英雄看板 */
         .hero { 
-            height: 90vh; 
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1920&q=80');
+            height: 60vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1500&q=80');
             background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: #fff; text-align: center;
         }
-        .hero h1 { font-size: 4rem; margin-bottom: 1.5rem; text-shadow: 0 4px 10px rgba(0,0,0,0.3); font-weight: 700; }
-        .hero p { font-size: 1.4rem; margin-bottom: 2.5rem; max-width: 600px; }
-        .cta-btn { padding: 15px 45px; background: var(--primary-color); color: white; text-decoration: none; border-radius: 50px; font-size: 1.2rem; font-weight: 700; transition: 0.4s; box-shadow: 0 4px 15px rgba(255, 118, 117, 0.4); }
-        .cta-btn:hover { background: #d63031; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(255, 118, 117, 0.6); }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .hero p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* 特色區塊 */
-        .features { padding: 100px 8%; display: flex; justify-content: space-around; text-align: center; background: var(--white); }
-        .feature-item { flex: 1; padding: 20px; }
-        .feature-item i { font-size: 3rem; color: var(--primary-color); margin-bottom: 1rem; display: block; }
-        .feature-item h3 { margin-bottom: 0.5rem; }
+        /* 行程分類 - 參考 Strikingly 的 Grid 佈局 */
+        .services { padding: 80px 8%; text-align: center; }
+        .section-title { margin-bottom: 50px; font-size: 2rem; color: var(--brand-blue); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .service-img { width: 100%; height: 200px; object-fit: cover; }
+        .service-info { padding: 25px; }
+        .service-info h3 { margin-bottom: 15px; color: var(--brand-blue); }
+        .btn-more { display: inline-block; padding: 8px 20px; border: 1px solid var(--brand-gold); color: var(--brand-gold); text-decoration: none; border-radius: 5px; transition: 0.3s; }
+        .btn-more:hover { background: var(--brand-gold); color: #fff; }
 
-        /* 行程區塊 - 質感提升 */
-        .tours { padding: 100px 8%; background: var(--light-bg); }
-        .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 15px; position: relative; display: inline-block; }
-        .section-title h2::after { content: ''; width: 60px; height: 4px; background: var(--primary-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
-        
-        .tour-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .tour-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s ease; border: 1px solid #eee; }
-        .tour-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
-        .tour-img-container { overflow: hidden; height: 250px; }
-        .tour-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-        .tour-card:hover .tour-img { transform: scale(1.1); }
-        
-        .tour-info { padding: 25px; }
-        .tour-info h3 { margin-bottom: 10px; font-size: 1.4rem; }
-        .tour-info p { color: #777; font-size: 0.95rem; margin-bottom: 20px; }
-        .tour-footer { display: flex; justify-content: space-between; align-items: center; }
-        .tour-price { color: var(--primary-color); font-weight: 700; font-size: 1.3rem; }
-        .book-btn { color: var(--primary-color); text-decoration: none; font-weight: 700; font-size: 0.9rem; border-bottom: 2px solid var(--primary-color); }
+        /* 關於我們 */
+        .about { padding: 80px 8%; background: #fff; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-text h2 { color: var(--brand-blue); margin-bottom: 20px; }
+        .about-img { flex: 1; min-width: 300px; border-radius: 12px; }
 
-        /* 頁尾 */
-        footer { background: var(--dark-color); color: rgba(255,255,255,0.8); text-align: center; padding: 60px 0; }
-        
-        /* 手機版適配 */
+        /* 聯絡資訊 Footer */
+        footer { background: var(--brand-blue); color: #fff; padding: 60px 8% 20px; }
+        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; margin-bottom: 40px; }
+        .footer-section h4 { margin-bottom: 20px; color: var(--brand-gold); }
+        .footer-section p { font-size: 0.9rem; margin-bottom: 10px; opacity: 0.8; }
+        .line-btn { display: inline-block; background: #00b900; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 10px; }
+        .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.8rem; opacity: 0.6; }
+
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .features { flex-direction: column; }
             .nav-links { display: none; }
         }
     </style>
@@ -88,90 +69,80 @@
 <body>
 
     <nav>
-        <div class="logo">DREAM TRAVEL</div>
+        <div class="logo"><span>🏨</span> 鴻禧旅行社</div>
         <ul class="nav-links">
-            <li><a href="#home">首頁</a></li>
-            <li><a href="#tours">熱門行程</a></li>
-            <li><a href="#about">為什麼選我們</a></li>
-            <li><a href="mailto:service@example.com">立即聯繫</a></li>
+            <li><a href="#">國內旅遊</a></li>
+            <li><a href="#">國外旅遊</a></li>
+            <li><a href="#">最新消息</a></li>
+            <li><a href="#">關於我們</a></li>
         </ul>
     </nav>
 
-    <header class="hero" id="home">
-        <h1>收藏一輩子的感動</h1>
-        <p>我們不只是帶你旅行，我們帶你發現生命中不曾見過的絕美角落。</p>
-        <a href="#tours" class="cta-btn">探索熱門行程</a>
+    <header class="hero">
+        <h1>專業、用心、誠信</h1>
+        <p>為您打造每一段難忘的旅程</p>
     </header>
 
-    <section class="features" id="about">
-        <div class="feature-item">
-            <i>🌍</i>
-            <h3>在地深度遊</h3>
-            <p>專業導遊帶領，走進觀光客不知道的秘密基地。</p>
-        </div>
-        <div class="feature-item">
-            <i>🛡️</i>
-            <h3>安心保障</h3>
-            <p>24小時線上客服與全程旅遊保險，讓您玩得放心。</p>
-        </div>
-        <div class="feature-item">
-            <i>💎</i>
-            <h3>精選住宿</h3>
-            <p>嚴選五星評價旅館，給您最頂級的休憩空間。</p>
+    <section class="services">
+        <h2 class="section-title">熱門旅遊服務</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1542332213-31f87348057f?auto=format&fit=crop&w=500&q=80" class="service-img">
+                <div class="service-info">
+                    <h3>澎湖自由行</h3>
+                    <p>碧海藍天的外島風情，享受最道地的海鮮饗宴與水上活動。</p>
+                    <a href="#" class="btn-more">了解詳情</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=500&q=80" class="service-img">
+                <div class="service-info">
+                    <h3>精選團體旅遊</h3>
+                    <p>專業導遊領隊，規劃最順暢的交通與優質住宿環境。</p>
+                    <a href="#" class="btn-more">了解詳情</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80" class="service-img">
+                <div class="service-info">
+                    <h3>企業員工旅遊</h3>
+                    <p>客製化行程設計，凝聚團隊向心力的最佳選擇。</p>
+                    <a href="#" class="btn-more">了解詳情</a>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="tours" id="tours">
-        <div class="section-title">
-            <h2>熱門精選行程</h2>
-            <p>為您準備的靈魂洗滌之旅</p>
-        </div>
-        <div class="tour-grid">
-            <div class="tour-card">
-                <div class="tour-img-container">
-                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4" alt="峇里島" class="tour-img">
-                </div>
-                <div class="tour-info">
-                    <h3>峇里島・心靈港灣</h3>
-                    <p>私人別墅下午茶、海邊夕陽瑜伽，徹底放鬆身心靈...</p>
-                    <div class="tour-footer">
-                        <span class="tour-price">TWD 29,900+</span>
-                        <a href="#" class="book-btn">查看細節 →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="tour-card">
-                <div class="tour-img-container">
-                    <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9" alt="威尼斯" class="tour-img">
-                </div>
-                <div class="tour-info">
-                    <h3>義大利・水都傳說</h3>
-                    <p>貢多拉划行於歷史巷弄，品嚐道地意式米其林饗宴...</p>
-                    <div class="tour-footer">
-                        <span class="tour-price">TWD 88,500+</span>
-                        <a href="#" class="book-btn">查看細節 →</a>
-                    </div>
-                </div>
-            </div>
-            <div class="tour-card">
-                <div class="tour-img-container">
-                    <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e" alt="京都" class="tour-img">
-                </div>
-                <div class="tour-info">
-                    <h3>京都・時光漫步</h3>
-                    <p>在清水舞台遠眺市景，漫步於祇園花見小路的櫻花下...</p>
-                    <div class="tour-footer">
-                        <span class="tour-price">TWD 35,000+</span>
-                        <a href="#" class="book-btn">查看細節 →</a>
-                    </div>
-                </div>
-            </div>
+    <section class="about" id="about">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=800&q=80" class="about-img" alt="關於我們">
+        <div class="about-text">
+            <h2>關於鴻禧</h2>
+            <p>我們擁有多年的旅遊規劃經驗，始終秉持著「服務至上」的精神。無論是家庭出遊、企業考察或外島度假，我們都能為您提供最專業的諮詢與服務。</p>
+            <p style="margin-top: 15px; font-weight: bold;">註冊編號：交觀甲字第 0000 號</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 夢幻假期旅行社. All Rights Reserved.</p>
-        <p>專業執照：交觀甲字第 123456 號</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>聯絡我們</h4>
+                <p>📍 高雄市某某區某某路</p>
+                <p>📞 電話：07-1234567</p>
+                <p>📧 Email: service@example.com</p>
+            </div>
+            <div class="footer-section">
+                <h4>服務時間</h4>
+                <p>週一至週五：09:00 - 18:00</p>
+                <p>週六及國定假日：請來電預約</p>
+            </div>
+            <div class="footer-section">
+                <h4>線上諮詢</h4>
+                <a href="#" class="line-btn">加入 Line 好友</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 鴻禧旅行社 版權所有
+        </div>
     </footer>
 
 </body>
