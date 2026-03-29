@@ -9,23 +9,24 @@
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; }
-        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 60px; }
-        .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
-        .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; }
         
-        .container { max-width: 1100px; margin: 60px auto; background: white; padding: 50px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 700px; }
-        th, td { padding: 25px 15px; border-bottom: 1px solid #edf2f7; text-align: center; }
-        th { background: #f8fafc; color: var(--deep-blue); font-size: 1.2rem; }
-        .good-choice { background: rgba(0, 170, 255, 0.05); border-left: 2px solid var(--sky-blue); border-right: 2px solid var(--sky-blue); font-weight: bold; }
-        .star-text { color: #ff5252; font-size: 1.3rem; }
+        nav { background: var(--white); padding: 0 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 80px; }
+        .logo-img { height: 55px; width: auto; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 20px; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
+        .nav-line-btn { background: var(--line-green); color: white !important; padding: 8px 20px; border-radius: 50px; }
+
+        .container { max-width: 1000px; margin: 40px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow-x: auto; }
+        h1 { text-align: center; color: var(--deep-blue); margin-bottom: 30px; }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 20px 10px; border-bottom: 1px solid #eee; text-align: center; }
+        th { background: #f4f8fb; color: var(--deep-blue); }
+        .best-choice { background: rgba(0, 170, 255, 0.05); font-weight: bold; color: #ff5252; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="投.jpg" class="logo-img"></a>
+        <a href="index.html"><img src="%E6%8A%95.jpg" alt="和諧旅遊" class="logo-img"></a>
         <ul class="nav-links">
             <li><a href="index.html">首頁</a></li>
             <li><a href="about.html">關於我們</a></li>
@@ -35,18 +36,18 @@
         </ul>
     </nav>
     <div class="container">
-        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 40px;">為什麼補貼行程是「聰明首選」？</h1>
+        <h1>為什麼補貼行程更超值？</h1>
         <table>
             <thead>
-                <tr><th>分析維度</th><th class="good-choice">【和諧特惠】有購物站補貼</th><th>【一般昂貴】全程無購物行程</th></tr>
+                <tr><th>比較項目</th><th class="best-choice">【和諧特惠】有購物補貼</th><th>【一般昂貴】無購物行程</th></tr>
             </thead>
             <tbody>
-                <tr><td>實質支出</td><td class="good-choice"><span class="star-text">省下 40% - 60%</span><br>預算留作私人購物</td><td>需負擔 100% 交通食宿成本</td></tr>
-                <tr><td>食宿規格</td><td class="good-choice"><strong>五星級飯店 / 豪華龍蝦餐</strong><br>廠商補貼直接升級硬體</td><td>受預算限制，多為標配商旅</td></tr>
-                <tr><td>導遊熱誠</td><td class="good-choice"><strong>高 EQ、服務熱誠極高</strong><br>更有動力照顧旅客情緒</td><td>例行公事化，服務相對平淡</td></tr>
-                <tr><td>休息頻率</td><td class="good-choice"><strong>吹冷氣休息、恢復體力</strong><br>避免長途拉車過於疲憊</td><td>行程緊湊，拉車無中繼站</td></tr>
-                <tr><td>在地互動</td><td class="good-choice">深度了解在地文化與特產歷史</td><td>走馬看花，缺乏人文連結</td></tr>
-                <tr><td>綜合推薦</td><td class="good-choice"><span class="star-text">⭐⭐⭐⭐⭐<br>聰明小資首選</span></td><td>⭐⭐⭐<br>適合預算無上限者</td></tr>
+                <tr><td>實質團費</td><td class="best-choice">省下 40% - 60% 預算</td><td>全額支出，負擔較重</td></tr>
+                <tr><td>飯店規格</td><td class="best-choice">升等五星級或國際連鎖</td><td>標準四星或商務旅館</td></tr>
+                <tr><td>精緻餐食</td><td class="best-choice">包含在地盛宴、龍蝦餐</td><td>中規中矩標配餐食</td></tr>
+                <tr><td>領隊服務</td><td class="best-choice">高 EQ 資深領隊，活力十足</td><td>例行公事，熱誠一般</td></tr>
+                <tr><td>休息頻率</td><td class="best-choice">購物站即休息站，舒適吹冷氣</td><td>連續拉車，體力消耗大</td></tr>
+                <tr><td>在地連結</td><td class="best-choice">深度了解地方特產與歷史</td><td>純拍照景點，缺乏人文互動</td></tr>
             </tbody>
         </table>
     </div>
