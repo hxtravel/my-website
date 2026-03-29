@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>行程深度分析 | 和諧旅遊</title>
+    <title>購物站釋疑 | 和諧旅遊</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; color: #2d3748; }
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
         .logo-img { height: 60px; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
         .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
-        .container { max-width: 1000px; margin: 60px auto; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; min-width: 600px; }
-        th, td { padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
-        th { background: #f4f8fb; color: var(--deep-blue); }
-        .best { background: rgba(0, 170, 255, 0.05); font-weight: bold; color: #ff5252; }
+        
+        .container { max-width: 1100px; margin: 50px auto; background: white; padding: 40px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); overflow-x: auto; }
+        h1 { text-align: center; color: var(--deep-blue); margin-bottom: 20px; }
+        .intro-text { text-align: center; max-width: 800px; margin: 0 auto 40px; color: #718096; }
+        table { width: 100%; border-collapse: collapse; min-width: 800px; }
+        th, td { padding: 22px 15px; border-bottom: 1px solid #edf2f7; text-align: left; }
+        th { background: #f8fafc; color: var(--deep-blue); font-size: 1.1rem; }
+        .highlight { background: rgba(0, 170, 255, 0.05); border-left: 3px solid var(--sky-blue); font-weight: bold; }
+        .best-tag { color: #ff5252; font-weight: bold; }
+        .pros { color: #2f855a; font-size: 0.9rem; font-style: italic; }
     </style>
 </head>
 <body>
@@ -27,26 +32,63 @@
         <ul class="nav-links">
             <li><a href="index.html">首頁</a></li>
             <li><a href="about.html">關於我們</a></li>
-            <li><a href="analysis.html">行程分析</a></li>
+            <li><a href="analysis.html">購物站釋疑</a></li>
             <li><a href="qa.html">常見問題</a></li>
             <li><a href="https://lin.ee/7WGlamz" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
     <div class="container">
-        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 30px;">為什麼補貼行程更超值？</h1>
+        <h1>聰明旅人的選擇策略：購物站 vs 無購物</h1>
+        <p class="intro-text">我們不避諱談論購物站，因為這正是您能以小資預算享受五星體驗的關鍵。以下為您深度解析兩種模式的實質差異。</p>
         <table>
             <thead>
-                <tr><th>比較項目</th><th class="best">【和諧特惠】有購物補貼</th><th>【一般昂貴】無購物行程</th></tr>
+                <tr>
+                    <th>比較維度</th>
+                    <th class="highlight">【和諧特惠】補貼行程 (含購物)</th>
+                    <th>【一般高價】全程無購物行程</th>
+                </tr>
             </thead>
             <tbody>
-                <tr><td>實質團費</td><td class="best">省下 40% - 60% 預算</td><td>全額支出，負擔較重</td></tr>
-                <tr><td>飯店規格</td><td class="best">升等五星級飯店</td><td>標準商務旅館</td></tr>
-                <tr><td>餐食標準</td><td class="best">包含龍蝦/在地盛宴</td><td>中規中矩標配餐</td></tr>
-                <tr><td>休息頻率</td><td class="best">購物站休息吹冷氣</td><td>連續拉車無中繼站</td></tr>
-                <tr><td>導遊服務</td><td class="best">資深領隊，活力十足</td><td>例行公事，熱誠一般</td></tr>
-                <tr><td>在地互動</td><td class="best">深度了解地方人文</td><td>純拍照景點</td></tr>
+                <tr>
+                    <td>預算壓力</td>
+                    <td class="highlight"><span class="best-tag">省下 40% - 60% 團費</span><br>預算可彈性用於個人喜好購物。</td>
+                    <td>需全額負擔高昂交通、食宿成本。</td>
+                </tr>
+                <tr>
+                    <td>食宿規格</td>
+                    <td class="highlight"><span class="best-tag">升等五星飯店 / 豪華龍蝦宴</span><br>補貼經費直接轉化為硬體規格。</td>
+                    <td>受預算限制，多為標準商旅與普通餐食。</td>
+                </tr>
+                <tr>
+                    <td>行程節奏</td>
+                    <td class="highlight"><strong>有中繼休息點</strong><br>每 2 小時有吹冷氣休息時間，體力消耗小。</td>
+                    <td><strong>景點停留增加約 15%</strong><br><span class="pros">好處：景點時間較充裕，適合攝影愛好者。</span></td>
+                </tr>
+                <tr>
+                    <td>在地連結</td>
+                    <td class="highlight">深度了解特產文化與在地經濟史。</td>
+                    <td>純粹觀光拍照，與當地民生互動較少。</td>
+                </tr>
+                <tr>
+                    <td>領隊服務</td>
+                    <td class="highlight"><span class="best-tag">高 EQ 資深領隊</span><br>團隊更有動力提供極致情緒價值。</td>
+                    <td>例行公事服務，熱誠穩定但缺乏動力。</td>
+                </tr>
+                <tr>
+                    <td>心境感受</td>
+                    <td class="highlight">輕鬆購物無壓力，選購特色伴手禮。</td>
+                    <td>完全無推銷環境。<br><span class="pros">好處：適合極度反感商業推廣的旅客。</span></td>
+                </tr>
+                <tr>
+                    <td>心理性價比</td>
+                    <td class="highlight"><span class="best-tag">⭐⭐⭐⭐⭐</span><br>用 3 星價格買 5 星服務，CP 值最高。</td>
+                    <td>⭐⭐⭐<br>適合預算充沛、只在意景點時長的旅客。</td>
+                </tr>
             </tbody>
         </table>
+        <div style="margin-top: 30px; padding: 20px; background: #fff5f5; border-radius: 10px; text-align: center;">
+            <p><strong>💡 總結建議：</strong>如果您希望在有限預算內「住得最好、吃得最棒」，選擇補貼行程是目前市場上最聰明的決定。</p>
+        </div>
     </div>
 </body>
 </html>
