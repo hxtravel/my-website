@@ -8,27 +8,57 @@
     <style>
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); display: flex; flex-direction: column; min-height: 100vh; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); display: flex; flex-direction: column; min-height: 100vh; color: #2d3748; }
+        
+        /* 統一導航欄 */
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
-        .logo-img { height: 55px; }
+        .logo-img { height: 55px; width: auto; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
-        .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
-        .content { flex: 1; padding: 40px 5%; max-width: 1200px; margin: 0 auto; width: 100%; }
-        .tab-menu { display: flex; justify-content: center; margin-bottom: 40px; gap: 15px; }
-        .tab-btn { padding: 12px 35px; border: 2px solid var(--sky-blue); border-radius: 50px; cursor: pointer; background: white; font-weight: bold; color: var(--deep-blue); }
-        .tab-btn.active { background: var(--sky-blue); color: white; }
-        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { color: var(--sky-blue); }
+        .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; display: flex; align-items: center; gap: 5px; }
+        
+        /* 頁面內容 */
+        .content { flex: 1; padding: 50px 8%; width: 100%; max-width: 1300px; margin: 0 auto; }
+        .page-title { text-align: center; color: var(--deep-blue); font-size: 2.5rem; margin-bottom: 50px; }
+        
+        /* Tab 分類菜單 */
+        .tab-menu { display: flex; justify-content: center; margin-bottom: 50px; gap: 20px; }
+        .tab-btn { padding: 15px 40px; border: 2px solid var(--sky-blue); border-radius: 50px; cursor: pointer; background: white; font-weight: bold; color: var(--deep-blue); font-size: 1.1rem; transition: 0.3s; }
+        .tab-btn:hover { background: rgba(0, 170, 255, 0.05); }
+        .tab-btn.active { background: var(--sky-blue); color: white; box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3); }
+        
+        /* Tab 內容 */
+        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
         .tab-content.active { display: grid; }
-        .tour-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .tour-img { width: 100%; height: 220px; object-fit: cover; }
-        .tour-info { padding: 25px; }
-        footer { background: #1a202c; color: white; padding: 40px 20px; text-align: center; width: 100%; }
+        
+        /* 行程卡片 */
+        .tour-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: 0.3s; display: flex; flex-direction: column; }
+        .tour-card:hover { transform: translateY(-10px); box-shadow: 0 15px 50px rgba(0,0,0,0.12); }
+        .tour-img-container { position: relative; height: 260px; overflow: hidden; }
+        .tour-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .tour-card:hover .tour-img { transform: scale(1.1); }
+        .tour-tag { position: absolute; top: 20px; right: 20px; background: rgba(0, 102, 153, 0.9); color: white; padding: 8px 15px; border-radius: 50px; font-size: 0.85rem; font-weight: bold; }
+        .tour-info { padding: 30px; flex: 1; display: flex; flex-direction: column; }
+        .tour-info h3 { font-size: 1.6rem; color: var(--deep-blue); margin-bottom: 15px; }
+        .tour-desc { color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+        .tour-highlights { list-style: none; margin-bottom: 25px; }
+        .tour-highlights li { position: relative; padding-left: 25px; margin-bottom: 8px; font-size: 0.9rem; }
+        .tour-highlights li::before { content: "✓"; position: absolute; left: 0; color: var(--line-green); font-weight: bold; }
+        .tour-action { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #eee; padding-top: 20px; margin-top: auto; }
+        .tour-price { font-size: 1.8rem; font-weight: bold; color: #ff5252; }
+        .tour-price span { font-size: 1rem; color: #999; font-weight: normal; margin-left: 5px; }
+        .tour-btn { background: var(--deep-blue); color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: 0.3s; }
+        .tour-btn:hover { background: var(--sky-blue); }
+        
+        /* 統一 Footer */
+        footer { background: #1a202c; color: white; padding: 40px 20px; text-align: center; width: 100%; margin-top: auto; line-height: 1.6; }
+        footer p { margin-bottom: 5px; font-size: 0.95rem; }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="LOGO.png" class="logo-img"></a>
+        <a href="index.html"><img src="LOGO.png" alt="和諧旅遊" class="logo-img"></a>
         <ul class="nav-links">
             <li><a href="index.html">首頁</a></li>
             <li><a href="tours.html">最新行程</a></li>
@@ -38,16 +68,18 @@
         </ul>
     </nav>
     <div class="content">
-        <h1 style="text-align: center; color: var(--deep-blue); margin-bottom: 40px;">精選推薦行程</h1>
+        <h1 class="page-title">精選推薦行程</h1>
         <div class="tab-menu">
-            <button class="tab-btn active" onclick="openTab(event, 'North')">東北亞團</button>
-            <button class="tab-btn" onclick="openTab(event, 'South')">東南亞團</button>
+            <button class="tab-btn active" onclick="openTab(event, 'North Asia')">東北亞團</button>
+            <button class="tab-btn" onclick="openTab(event, 'South Asia')">東南亞團</button>
         </div>
-        <div id="North" class="tab-content active">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img"><div class="tour-info"><h3>日韓五星深度遊</h3><p>奢華住宿，東北亞補貼超值首選。</p></div></div>
+        <div id="North Asia" class="tab-content active">
+            <div class="tour-card"><div class="tour-img-container"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img"><div class="tour-tag">日韓深度遊</div></div><div class="tour-info"><h3>日韓深度之旅</h3><p class="tour-desc">深度體驗日韓兩國的經典風情。我們規劃了大阪古城漫步、東京時尚採購，以及首爾韓流文化體驗。特別安排入住國際品牌五星級飯店，補貼方案超值首選。</p><ul class="tour-highlights"><li>入住兩晚五星飯店 / 國際品牌飯店</li><li>特色螃蟹饗宴 / 正宗韓式燒肉</li><li>深度走訪大阪、東京、首爾經典景點</li></ul><div class="tour-action"><span class="tour-price">28,900<span>起</span></span><a href="https://lin.ee/7WGlamz" class="tour-btn">與客服諮詢</a></div></div></div>
+            <div class="tour-card"><div class="tour-img-container"><img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e?w=500" class="tour-img"><div class="tour-tag">中國壯麗山河</div></div><div class="tour-info"><h3>中國壯麗山河</h3><p class="tour-desc">一次走訪北京歷史建築與江南水鄉古鎮。體驗長城宏偉壯麗、紫禁城深厚歷史，感受江南小橋流水的雅致，深刻體驗極致文化底蘊。</p><ul class="tour-highlights"><li>北京紫禁城 / 八達嶺長城漫步</li><li>江南周莊古鎮水鄉體驗</li><li>享用正宗北京烤鴨 / 江南大盛饗宴</li></ul><div class="tour-action"><span class="tour-price">26,900<span>起</span></span><a href="https://lin.ee/7WGlamz" class="tour-btn">與客服諮詢</a></div></div></div>
         </div>
-        <div id="South" class="tab-content">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500" class="tour-img"><div class="tour-info"><h3>曼谷豪華度假</h3><p>入住湄南河畔，享用泰式頂級大盛。</p></div></div>
+        <div id="South Asia" class="tab-content">
+            <div class="tour-card"><div class="tour-img-container"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500" class="tour-img"><div class="tour-tag">曼谷豪華度假</div></div><div class="tour-info"><h3>曼谷豪華度假</h3><p class="tour-desc">在泰國曼谷享受頂級豪華度假體驗。安排入住湄南河畔景觀五星飯店，品味正宗泰式道地饗宴。行程豐富多元，包含大皇宮、玉佛寺等經典景點。</p><ul class="tour-highlights"><li>湄南河畔景觀飯店住宿體驗</li><li>享用在地大盛饗宴 / 龍蝦大餐</li><li>大皇宮、玉佛寺、水上市場體驗</li></ul><div class="tour-action"><span class="tour-price">23,900<span>起</span></span><a href="https://lin.ee/7WGlamz" class="tour-btn">與客服諮詢</a></div></div></div>
+            <div class="tour-card"><div class="tour-img-container"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500" class="tour-img"><div class="tour-tag">越南下龍灣</div></div><div class="tour-info"><h3>越南下龍灣</h3><p class="tour-desc">世界自然遺產巡禮，感受海上桂林的壯麗奇景。安排豪華遊船深度遊覽下龍灣，享用極致度假體驗。行程豐富多元，更包含在地大盛饗宴，感受越南魅力。</p><ul class="tour-highlights"><li>世界自然遺產下龍灣豪華遊船體驗</li><li>在地特色龍蝦大餐 / 越南大盛饗宴</li><li>陸下龍灣深度漫步體驗</li></ul><div class="tour-action"><span class="tour-price">21,900<span>起</span></span><a href="https://lin.ee/7WGlamz" class="tour-btn">與客服諮詢</a></div></div></div>
         </div>
     </div>
     <footer>
