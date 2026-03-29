@@ -3,47 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>和諧旅遊 | 專業跨境旅遊規劃 - 首頁</title>
+    <title>關於我們 | 和諧旅遊</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: #2d3748; line-height: 1.8; }
-        
-        /* 修正後的統一導航欄 */
-        nav { background: var(--white); padding: 0 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 80px; }
-        .logo-img { height: 55px; width: auto; vertical-align: middle; }
-        .nav-links { list-style: none; display: flex; align-items: center; gap: 20px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; font-size: 0.95rem; transition: 0.3s; }
-        .nav-line-btn { background: var(--line-green); color: white !important; padding: 8px 20px; border-radius: 50px; white-space: nowrap; }
-
-        .hero { height: 40vh; background: linear-gradient(rgba(0,102,153,0.7), rgba(0,102,153,0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
-        .section { padding: 60px 8%; }
-        .section-title { text-align: center; font-size: 2.2rem; color: var(--deep-blue); margin-bottom: 40px; }
-
-        /* 行程分頁 */
-        .tab-menu { display: flex; justify-content: center; margin-bottom: 30px; gap: 10px; flex-wrap: wrap; }
-        .tab-btn { padding: 10px 25px; border: 2px solid var(--sky-blue); border-radius: 50px; cursor: pointer; background: white; font-weight: bold; color: var(--deep-blue); }
-        .tab-btn.active { background: var(--sky-blue); color: white; }
-        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .tab-content.active { display: grid; }
-        .tour-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .tour-img { width: 100%; height: 200px; object-fit: cover; }
-        .tour-info { padding: 20px; }
-
-        footer { background: #1a202c; color: white; padding: 40px 8%; text-align: center; }
-
-        @media (max-width: 768px) {
-            nav { padding: 0 3%; }
-            .nav-links { gap: 10px; }
-            .nav-links a { font-size: 0.85rem; }
-            .logo-img { height: 40px; }
-        }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); line-height: 1.8; }
+        nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; height: 80px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .logo-img { height: 60px; }
+        .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
+        .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
+        .container { max-width: 900px; margin: 60px auto; background: white; padding: 50px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); }
     </style>
 </head>
 <body>
     <nav>
-        <a href="index.html"><img src="%E6%8A%95.jpg" alt="和諧旅遊" class="logo-img"></a>
+        <a href="index.html"><img src="LOGO.png" class="logo-img"></a>
         <ul class="nav-links">
             <li><a href="index.html">首頁</a></li>
             <li><a href="about.html">關於我們</a></li>
@@ -52,43 +28,9 @@
             <li><a href="https://lin.ee/7WGlamz" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
-
-    <header class="hero">
-        <h1>收藏天空下的每一份感動</h1>
-        <p>專業跨境旅遊規劃・深耕亞洲旅遊多年</p>
-    </header>
-
-    <section class="section">
-        <h2 class="section-title">最新行程推薦</h2>
-        <div class="tab-menu">
-            <button class="tab-btn active" onclick="openTab(event, 'NAsia')">東北亞 (日韓中)</button>
-            <button class="tab-btn" onclick="openTab(event, 'SAsia')">東南亞 (泰越菲)</button>
-        </div>
-        <div id="NAsia" class="tab-content active">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img"><div class="tour-info"><h3>日韓深度之旅</h3><p>入住五星飯店，享受高規旅遊補貼方案。</p></div></div>
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e?w=500" class="tour-img"><div class="tour-info"><h3>中國壯麗山河</h3><p>深度走訪北京與江南，感受大山大水魅力。</p></div></div>
-        </div>
-        <div id="SAsia" class="tab-content">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500" class="tour-img"><div class="tour-info"><h3>曼谷度假盛宴</h3><p>入住湄南河畔，品味五星泰式盛宴。</p></div></div>
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500" class="tour-img"><div class="tour-info"><h3>越南下龍灣</h3><p>世界自然遺產巡禮，極致超值體驗。</p></div></div>
-        </div>
-    </section>
-
-    <footer>
-        <p>和諧旅遊 | 統編：54540709 | 觀光署：754100</p>
-        <p>&copy; 2026 和諧旅遊 版權所有</p>
-    </footer>
-
-    <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
-            document.getElementById(tabName).style.display = "grid";
-            evt.currentTarget.classList.add("active");
-        }
-    </script>
+    <div class="container">
+        <h1 style="color: var(--deep-blue); text-align: center; margin-bottom: 30px;">深耕旅遊 20 年的職人精神</h1>
+        <p><strong>和諧旅遊 Harmony Travel</strong> 成立於桃園，核心團隊擁有超過二十年的產業經驗。我們相信旅行是一場資源共享的紅利，透過與優質廠商合作，將廣告補貼直接回饋給旅客，提升飯店與餐食規格，讓預算發揮最大價值。</p>
+    </div>
 </body>
 </html>
