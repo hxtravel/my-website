@@ -10,15 +10,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: #2d3748; line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; }
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 80px; }
-        .logo-img { height: 55px; width: auto; }
+        .logo-img { height: 55px; }
         .nav-links { list-style: none; display: flex; align-items: center; gap: 25px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
         .content { flex: 1; }
-        .hero { height: 45vh; background: linear-gradient(rgba(0,102,153,0.7), rgba(0,102,153,0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-        .about-section { padding: 80px 10%; background: white; margin: 40px auto; max-width: 1100px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h2.section-title { color: var(--deep-blue); font-size: 2.2rem; margin-bottom: 25px; text-align: center; }
-        footer { background: #1a202c; color: white; padding: 40px 20px; text-align: center; width: 100%; line-height: 1.6; }
+        .hero { height: 40vh; background: linear-gradient(rgba(0,102,153,0.6), rgba(0,102,153,0.3)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        .about-section { padding: 60px 10%; background: white; margin: 40px auto; max-width: 1100px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        footer { background: #1a202c; color: white; padding: 40px 20px; text-align: center; width: 100%; margin-top: auto; }
     </style>
 </head>
 <body>
@@ -38,9 +37,8 @@
             <p>專業跨境旅遊規劃・深耕亞洲旅遊多年</p>
         </header>
         <section class="about-section">
-            <h2 class="section-title">關於我們</h2>
-            <p><strong>和諧旅遊 Harmony Travel</strong> 核心團隊擁有超過二十年的產業經驗。我們深知旅客對於高品質與合理預算的追求，因此開創了資源補貼模式。</p>
-            <p>我們透過與在地特產廠商合作，換取旅遊補貼，直接回饋在飯店與餐食品質上。在和諧，我們堅持誠信透明，讓每一趟旅程都能達到性價比的最優平衡。</p>
+            <h2 style="text-align:center; color:var(--deep-blue); margin-bottom:20px;">關於我們</h2>
+            <p><strong>和諧旅遊 Harmony Travel</strong> 核心團隊擁有二十年經驗。我們透過資源補貼模式，將特產廠商的贊助直接回饋在您的食宿品質上。在和諧，我們堅持誠信、透明，讓每趟旅程性價比最高。</p>
         </section>
     </div>
     <footer>
