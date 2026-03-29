@@ -6,32 +6,31 @@
     <title>和諧旅遊 | 專業跨境旅遊規劃 - 首頁</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
+        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; --text: #2d3748; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: #2d3748; line-height: 1.8; }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: var(--text); line-height: 1.8; }
         
-        /* 導航列 */
+        /* 統一導航欄 */
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 80px; }
         .logo-img { height: 60px; width: auto; }
         .nav-links { list-style: none; display: flex; align-items: center; }
         .nav-links li { margin-left: 25px; }
         .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
+        .nav-links a:hover { color: var(--sky-blue); }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; }
 
-        /* 英雄區 */
-        .hero { height: 45vh; background: linear-gradient(rgba(0, 102, 153, 0.7), rgba(0, 102, 153, 0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
-        
+        .hero { height: 45vh; background: linear-gradient(rgba(0,102,153,0.7), rgba(0,102,153,0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
         .section { padding: 80px 8%; }
         .section-title { text-align: center; font-size: 2.5rem; color: var(--deep-blue); margin-bottom: 50px; position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--sky-blue); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--sky-blue); position: absolute; bottom: -12px; left: 50%; transform: translateX(-50%); }
 
         /* 關於我們預覽 */
-        .about-preview { display: grid; grid-gap: 50px; grid-template-columns: 1.2fr 0.8fr; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .about-preview { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; max-width: 1200px; margin: 0 auto; }
         .btn-more { display: inline-block; margin-top: 20px; color: var(--sky-blue); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--sky-blue); }
 
-        /* 最新行程 (分頁標籤) */
+        /* 最新行程 Tab */
         .tab-menu { display: flex; justify-content: center; margin-bottom: 40px; gap: 15px; }
-        .tab-btn { padding: 12px 35px; border: 2px solid var(--sky-blue); border-radius: 50px; cursor: pointer; background: white; font-weight: bold; color: var(--deep-blue); transition: 0.3s; }
+        .tab-btn { padding: 12px 35px; border: 2px solid var(--sky-blue); border-radius: 50px; cursor: pointer; background: white; font-weight: bold; color: var(--deep-blue); }
         .tab-btn.active { background: var(--sky-blue); color: white; }
         .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
         .tab-content.active { display: grid; }
@@ -57,15 +56,15 @@
 
     <header class="hero">
         <h1>收藏天空下的每一份感動</h1>
-        <p>專業跨境旅遊規劃・為您打造高性價比旅程</p>
+        <p>專業跨境旅遊規劃・深耕亞洲旅遊多年</p>
     </header>
 
     <section class="section">
         <div class="about-preview">
             <div>
                 <h2 style="color:var(--deep-blue); margin-bottom:20px;">關於和諧：重新定義旅遊價值</h2>
-                <p>我們深耕旅遊產業超過 20 年，始終相信旅行不只是消費，而是一場旅客、旅行社與在地文化的「和諧共好」。我們開創了透明的合作模式，將廣告補貼直接回饋給旅客...</p>
-                <a href="about.html" class="btn-more">深入了解我們的故事 →</a>
+                <p>旅行不應只是消費，而是一場旅客、旅行社與在地文化的「和諧共好」。我們開創了透明的合作模式，將廣告補貼直接回饋給旅客，提升飯店與餐食規格...</p>
+                <a href="about.html" class="btn-more">點擊閱讀深度介紹 →</a>
             </div>
             <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600" style="width:100%; border-radius:20px; box-shadow: 15px 15px 0 var(--sky-blue);">
         </div>
@@ -78,12 +77,24 @@
             <button class="tab-btn" onclick="openTab(event, 'SouthAsia')">東南亞 (泰越菲)</button>
         </div>
         <div id="NorthAsia" class="tab-content active">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img"><div class="tour-info"><h3>日韓深度之旅</h3><p>入住五星級飯店，享受高規旅遊補貼方案。</p></div></div>
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e?w=500" class="tour-img"><div class="tour-info"><h3>中國壯麗山河</h3><p>走訪北京長城與江南水鄉，感受大山大水的文化底蘊。</p></div></div>
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img">
+                <div class="tour-info"><h3>日韓深度之旅</h3><p>入住五星飯店，享受高規旅遊補貼方案。</p></div>
+            </div>
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e?w=500" class="tour-img">
+                <div class="tour-info"><h3>中國壯麗山河</h3><p>走訪北京長城與江南水鄉，感受大山大水的文化底蘊。</p></div>
+            </div>
         </div>
         <div id="SouthAsia" class="tab-content">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500" class="tour-img"><div class="tour-info"><h3>曼谷五星度假</h3><p>品味泰式美食，入住湄南河畔飯店，享受超值價格。</p></div></div>
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500" class="tour-img"><div class="tour-info"><h3>越南下龍灣傳奇</h3><p>世界自然遺產巡禮，精選土產購物體驗。</p></div></div>
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500" class="tour-img">
+                <div class="tour-info"><h3>曼谷度假盛宴</h3><p>品味泰式美食，入住湄南河畔飯店。</p></div>
+            </div>
+            <div class="tour-card">
+                <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500" class="tour-img">
+                <div class="tour-info"><h3>越南下龍灣</h3><p>世界自然遺產巡禮，極致超值體驗。</p></div>
+            </div>
         </div>
     </section>
 
@@ -91,7 +102,7 @@
         <div class="footer-grid">
             <div><h4>和諧旅遊</h4><p>🆔 統編：54540709<br>📍 桃園市桃園區朝陽街一段92號</p></div>
             <div><h4>官方資質</h4><p>觀光署：754100<br>品保：桃01880001</p></div>
-            <div><p>掌握最新促銷：</p><a href="https://lin.ee/7WGlamz" class="nav-line-btn">官方 LINE 諮詢</a></div>
+            <div><a href="https://lin.ee/7WGlamz" class="nav-line-btn">官方 LINE 諮詢</a></div>
         </div>
     </footer>
 
