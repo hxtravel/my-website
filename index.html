@@ -3,192 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>和諧旅遊 | 專業跨境旅遊規劃 - 東北亞、東南亞首選</title>
+    <title>和諧旅遊 | 收藏世界的美好 - 首頁</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --sky-blue: #00aaff;
-            --deep-blue: #006699;
-            --bg-color: #e6f0f8; /* 降低亮度，深色質感底色 */
-            --white: #ffffff;
-            --line-green: #06c755;
-            --accent-red: #ff5252;
-            --text-dark: #2d3748;
-        }
-
+        :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: var(--text-dark); line-height: 1.8; scroll-behavior: smooth; }
-
-        /* 導覽列 */
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: var(--bg-color); color: #2d3748; line-height: 1.8; }
         nav { background: var(--white); padding: 0 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(0,0,0,0.08); height: 80px; }
-        .logo-img { height: 50px; width: auto; }
         .nav-links { list-style: none; display: flex; align-items: center; }
         .nav-links li { margin-left: 30px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
-        .nav-links a:hover { color: var(--sky-blue); }
-        .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; }
-
-        /* 英雄區 */
-        .hero { 
-            height: 45vh; 
-            background: linear-gradient(rgba(0, 102, 153, 0.7), rgba(0, 102, 153, 0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1500&q=80');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;
-        }
-        .hero h1 { font-size: 3.5rem; letter-spacing: 2px; text-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-
-        .section { padding: 90px 8%; }
-        .section-title { text-align: center; font-size: 2.5rem; color: var(--deep-blue); margin-bottom: 60px; position: relative; }
-        .section-title::after { content: ''; width: 80px; height: 5px; background: var(--sky-blue); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
-
-        /* 關於我們：深度內容版 */
-        .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .about-text h2 { color: var(--deep-blue); margin-bottom: 25px; font-size: 2rem; }
-        .about-highlight { background: var(--white); padding: 30px; border-radius: 15px; border-left: 6px solid var(--sky-blue); margin-top: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .about-highlight h4 { color: var(--sky-blue); margin-bottom: 10px; }
-
-        /* 最新行程：分頁版 */
-        .tabs-container { max-width: 1100px; margin: 0 auto; }
-        .tab-menu { display: flex; justify-content: center; margin-bottom: 40px; gap: 20px; }
-        .tab-btn { padding: 15px 40px; border: 2px solid var(--sky-blue); background: var(--white); color: var(--deep-blue); font-weight: bold; border-radius: 50px; cursor: pointer; transition: 0.3s; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
+        .hero { height: 50vh; background: linear-gradient(rgba(0, 102, 153, 0.6), rgba(0, 102, 153, 0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1500&q=80'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
+        .section { padding: 60px 8%; }
+        .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; max-width: 1200px; margin: 0 auto; }
+        .tour-card { background: var(--white); border-radius: 15px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .tab-menu { display: flex; justify-content: center; margin-bottom: 30px; gap: 15px; }
+        .tab-btn { padding: 10px 30px; border: 2px solid var(--sky-blue); border-radius: 50px; cursor: pointer; background: white; }
         .tab-btn.active { background: var(--sky-blue); color: white; }
-        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .tab-content { display: none; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .tab-content.active { display: grid; }
-        .tour-card { background: var(--white); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .tour-img { width: 100%; height: 230px; object-fit: cover; }
-        .tour-info { padding: 25px; }
-
-        /* 比較表格：強化版 */
-        .comparison-card { background: var(--white); padding: 50px; border-radius: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); overflow-x: auto; margin: 0 auto; max-width: 1100px; }
-        table { width: 100%; border-collapse: collapse; min-width: 700px; }
-        th, td { padding: 25px 15px; text-align: center; border-bottom: 1px solid #edf2f7; }
-        th { font-size: 1.2rem; color: var(--deep-blue); background: #f8fafc; }
-        .good-choice { background: rgba(0, 170, 255, 0.05); border-left: 2px solid var(--sky-blue); border-right: 2px solid var(--sky-blue); }
-        .star-text { color: var(--accent-red); font-weight: bold; font-size: 1.3rem; }
-
-        /* QA 區塊：補回 */
-        .qa-container { max-width: 1000px; margin: 0 auto; }
-        .qa-item { background: var(--white); margin-bottom: 20px; padding: 25px; border-radius: 15px; border-left: 5px solid var(--sky-blue); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .qa-q { font-weight: bold; color: var(--accent-red); font-size: 1.1rem; margin-bottom: 10px; }
-        .qa-a { color: var(--text-dark); }
-
-        /* 頁尾 */
-        footer { background: #1a202c; color: white; padding: 70px 8% 40px; }
-        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 50px; }
-        .contact-btn { display: inline-block; background: var(--line-green); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 25px; }
-
-        @media (max-width: 992px) { .about-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2.2rem; } }
+        footer { background: #1a202c; color: white; padding: 40px 8%; text-align: center; }
+        .nav-line-btn { background: var(--line-green); color: white !important; padding: 8px 20px; border-radius: 50px; }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="#"><img src="logo.jpg" alt="和諧旅遊" class="logo-img"></a>
+        <a href="index.html"><img src="logo.jpg" style="height:50px;"></a>
         <ul class="nav-links">
-            <li><a href="#">首頁</a></li>
-            <li><a href="#about">關於我們</a></li>
-            <li><a href="#tours">行程預覽</a></li>
-            <li><a href="#comparison">深度分析</a></li>
-            <li><a href="#qa">常見問題</a></li>
-            <li><a href="https://lin.ee/7WGlamz" target="_blank" class="nav-line-btn">LINE 諮詢</a></li>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="about.html">關於我們</a></li>
+            <li><a href="analysis.html">行程分析</a></li>
+            <li><a href="qa.html">常見問題</a></li>
+            <li><a href="https://lin.ee/7WGlamz" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
-
     <header class="hero">
         <h1>收藏天空下的每一份感動</h1>
         <p>專業跨境旅遊規劃・深耕亞洲旅遊多年</p>
     </header>
-
-    <section class="section" id="about">
+    <section class="section">
         <div class="about-grid">
-            <div class="about-text">
-                <h2>關於我們：重新定義「和諧」的旅遊價值</h2>
-                <p><strong>和諧旅遊 Harmony Travel</strong> 成立於桃園，我們是一群對世界充滿熱忱、在旅遊產業深耕超過 20 年的職人團隊。旅行不應只是消費，而是一場旅客、旅行社與在地文化的「和諧共好」。</p>
+            <div>
+                <h2>重新定義「和諧」的旅遊價值</h2>
+                <p>我們不只是旅行社，更是您的旅遊規劃師。每一條路線都經過精心設計，確保旅客能以最合理的預算，換取最高質量的旅遊體驗。我們將廠商贊助的廣告經費直接回饋給旅客，提升飯店與餐食規格。</p>
                 <br>
-                <p>我們開創了透明且創新的經營模式：與在地特色優質廠商深度合作，將廠商贊助的廣告經費直接回饋給旅客。我們將這份「資源補貼」轉化為更好的飯店房間、更精緻的道地餐食，讓您用聰明的預算，享受超標的驚喜。</p>
-                
-                <div class="about-highlight">
-                    <h4>我們的承諾</h4>
-                    <p>● <strong>透明報價</strong>：絕無隱藏費用，每一分錢都花在刀口上。<br>
-                       ● <strong>專業領隊</strong>：嚴選經驗豐富的高 EQ 領隊，全程守護安全與情緒。<br>
-                       ● <strong>和諧體驗</strong>：尊重在地文化，創造有溫度的旅行劇本。</p>
-                </div>
+                <a href="about.html" style="color:var(--sky-blue); font-weight:bold;">了解更多關於我們 →</a>
             </div>
-            <div class="about-img">
-                <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=800&q=80" style="width: 100%; border-radius: 30px; box-shadow: 20px 20px 0 var(--sky-blue);">
-            </div>
+            <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=500" style="width:100%; border-radius:20px;">
         </div>
     </section>
-
-    <section class="section" id="tours">
-        <h2 class="section-title">最新行程推薦</h2>
+    <section class="section" style="background: rgba(255,255,255,0.3);">
+        <h2 style="text-align:center; margin-bottom:40px;">最新行程預覽</h2>
         <div class="tabs-container">
             <div class="tab-menu">
-                <button class="tab-btn active" onclick="openTab(event, 'NorthAsia')">東北亞 (日韓中)</button>
-                <button class="tab-btn" onclick="openTab(event, 'SouthAsia')">東南亞 (泰越菲)</button>
+                <button class="tab-btn active" onclick="openTab(event, 'NAsia')">東北亞</button>
+                <button class="tab-btn" onclick="openTab(event, 'SAsia')">東南亞</button>
             </div>
-
-            <div id="NorthAsia" class="tab-content active">
-                <div class="tour-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e" class="tour-img"><div class="tour-info"><h3>日韓深度五日</h3><p>一趟旅程蒐集京都古意與首爾繁華。透過精選補貼，入住五星飯店。</p></div></div>
-                <div class="tour-card"><img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e" class="tour-img"><div class="tour-info"><h3>中國壯麗山河</h3><p>走訪長城、九寨溝，深度體驗歷史文化。適合喜愛大山大水的您。</p></div></div>
+            <div id="NAsia" class="tab-content active">
+                <div class="tour-card"><div style="padding:20px;"><h3>日韓深度之旅</h3><p>入住五星飯店，享受高規旅遊補貼。</p></div></div>
+                <div class="tour-card"><div style="padding:20px;"><h3>中國壯麗山河</h3><p>深度走訪長城、九寨溝，體驗人文底蘊。</p></div></div>
             </div>
-
-            <div id="SouthAsia" class="tab-content">
-                <div class="tour-card"><img src="https://images.unsplash.com/photo-1528127269322-539801943592" class="tour-img"><div class="tour-info"><h3>曼谷度假盛宴</h3><p>入住湄南河畔飯店，享受泰式海鮮大餐與廠家贊助的超值價格。</p></div></div>
-                <div class="tour-card"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186" class="tour-img"><div class="tour-info"><h3>越南秘境巡禮</h3><p>下龍灣美景與在地文化推廣，提供最接地氣、物超所值的度假體驗。</p></div></div>
+            <div id="SAsia" class="tab-content">
+                <div class="tour-card"><div style="padding:20px;"><h3>曼谷五星度假</h3><p>品味泰式盛宴，聰明旅費大節省。</p></div></div>
+                <div class="tour-card"><div style="padding:20px;"><h3>越南下龍灣</h3><p>世界遺產巡禮，豐富在地補貼行程。</p></div></div>
             </div>
         </div>
     </section>
-
-    <section class="section" id="comparison">
-        <h2 class="section-title">為什麼我們推薦有購物行程？</h2>
-        <div class="comparison-card">
-            <table>
-                <thead>
-                    <tr><th>分析項目</th><th class="good-choice">【和諧特惠】有購物站行程</th><th>【一般昂貴】全程無購物行程</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td><strong>實質支出</strong></td><td class="good-choice"><span class="star-text">省下 40% - 60%</span></td><td>負擔全額成本</td></tr>
-                    <tr><td><strong>食宿規格</strong></td><td class="good-choice"><strong>升等五星飯店/龍蝦餐</strong></td><td>多為標配商務飯店</td></tr>
-                    <tr><td><strong>導遊熱誠</strong></td><td class="good-choice"><strong>充滿服務熱情</strong></td><td>服務中規中矩</td></tr>
-                    <tr><td><strong>休息頻率</strong></td><td class="good-choice"><strong>購物站舒適吹冷氣休息</strong></td><td>拉車疲憊且無中繼站</td></tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="section" id="qa">
-        <h2 class="section-title">常見問題 Q&A</h2>
-        <div class="qa-container">
-            <div class="qa-item"><div class="qa-q">Q1：和諧旅行社是合法立案的嗎？付錢有保障嗎？</div><div class="qa-a">絕對合法，誠信第一。我們領有旅行業執照，並依法投保履約保證保險，您的旅遊權益受法律完整保障。</div></div>
-            <div class="qa-item"><div class="qa-q">Q2：如果行程中遇到突發狀況，你們會處理嗎？</div><div class="qa-a">專業領隊，全程守護。我們設有 24 小時緊急聯絡專線，不論在國內外遇到任何困難，我們都會以最高效率處理。</div></div>
-            <div class="qa-item"><div class="qa-q">Q3：網站上的價格是真的嗎？會有隱藏費用嗎？</div><div class="qa-a">標價清晰，絕無隱藏。我們堅持報價透明化，網頁標價即為實際成本，不額外加價。</div></div>
-            <div class="qa-item"><div class="qa-q">Q4：為什麼你們的團費可以比市場行情更便宜？</div><div class="qa-a">購物補貼，回饋團費。我們與當地特色店家合作，將廣告回饋金直接折抵在團費上，回饋給旅客。</div></div>
-            <div class="qa-item"><div class="qa-q">Q5：進購物站會被強迫買東西嗎？</div><div class="qa-a">絕對不強迫，消費隨心。買與不買完全由您決定。領隊導遊嚴禁強迫行為，您可以放鬆吹冷氣聽介紹。</div></div>
-            <div class="qa-item"><div class="qa-q">Q6：便宜團的食宿品質會不會很差？</div><div class="qa-a">預算減半，品質不減。團費降低是因為店家補貼，我們依然嚴選優質飯店與道地美食。</div></div>
-            <div class="qa-item"><div class="qa-q">Q7：如果我想參加「無購物」行程，有提供嗎？</div><div class="qa-a">有的。我們同時提供「特惠購物團」與「豪華無購物團」供您根據預算彈性選擇。</div></div>
-            <div class="qa-item"><div class="qa-q">Q8：報名付完訂金後，多久可以確認成行？</div><div class="qa-a">24小時快速回覆。專業客服將在工作日內確認機位與成團狀況。</div></div>
-            <div class="qa-item"><div class="qa-q">Q9：如果報名人數不足無法成團怎麼辦？</div><div class="qa-a">保障出發，方案透明。我們最慢會在出發前 7 天通知，您可以選擇全額退費或改期。</div></div>
-            <div class="qa-item"><div class="qa-q">Q10：我有特殊飲食需求（如素食），可以安排嗎？</div><div class="qa-a">貼心安排。只要在報名時告知專員，我們都會預先與飯店及餐廳溝通妥當。</div></div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-grid">
-            <div><h4>和諧旅遊</h4><p>🆔 統編：54540709<br>📍 桃園市桃園區朝陽街一段92號</p></div>
-            <div><h4>官方資質</h4><p>觀光署：754100<br>品保：桃01880001</p></div>
-            <div><a href="https://lin.ee/7WGlamz" target="_blank" class="contact-btn">🟢 官方 LINE 諮詢</a></div>
-        </div>
-        <div style="text-align: center; margin-top: 50px; opacity: 0.6;">&copy; 2026 和諧旅遊 版權所有</div>
-    </footer>
-
+    <footer><p>&copy; 2026 和諧旅遊 版權所有</p></footer>
     <script>
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+            for (i = 0; i < tabcontent.length; i++) tabcontent[i].style.display = "none";
             tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+            for (i = 0; i < tablinks.length; i++) tablinks[i].classList.remove("active");
             document.getElementById(tabName).style.display = "grid";
             evt.currentTarget.classList.add("active");
         }
