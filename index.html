@@ -12,6 +12,7 @@
             --light-bg: #f9fbf9;
             --white: #ffffff;
             --accent-gold: #f39c12;
+            --line-color: #06c755;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,11 +21,12 @@
         /* 導航 */
         nav { background: rgba(255,255,255,0.98); padding: 1.2rem 8%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
         .logo { font-size: 1.6rem; font-weight: bold; color: var(--brand-green); text-decoration: none; display: flex; align-items: center; }
-        .logo span { margin-right: 8px; }
-        .nav-links { list-style: none; display: flex; }
+        .nav-links { list-style: none; display: flex; align-items: center; }
         .nav-links li { margin-left: 25px; }
         .nav-links a { text-decoration: none; color: var(--dark-gray); font-weight: 500; transition: 0.3s; }
         .nav-links a:hover { color: var(--brand-green); }
+        .nav-line-btn { background: var(--line-color); color: white !important; padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; }
+        .nav-line-btn:hover { background: #05a346; transform: scale(1.05); }
 
         /* 英雄區塊 */
         .hero { 
@@ -36,7 +38,7 @@
         .hero h1 { font-size: 3rem; margin-bottom: 10px; letter-spacing: 2px; }
         .hero p { font-size: 1.2rem; opacity: 0.9; }
 
-        /* Q&A 區塊 (參考 Strikingly 內容) */
+        /* Q&A 區塊 */
         .qa-section { padding: 80px 8%; background: var(--white); }
         .section-title { text-align: center; margin-bottom: 60px; font-size: 2.2rem; color: var(--dark-gray); position: relative; }
         .section-title::after { content: ''; width: 60px; height: 3px; background: var(--brand-green); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); }
@@ -51,7 +53,7 @@
         .qa-a { font-size: 1.05rem; color: #555; padding-left: 43px; position: relative; }
         .qa-a::before { content: "A"; font-weight: bold; color: var(--accent-gold); position: absolute; left: 15px; top: 0; }
 
-        /* 底部資訊欄 - 官方資訊校正 */
+        /* 底部資訊欄 */
         footer { background: var(--dark-gray); color: #fff; padding: 70px 8% 30px; }
         .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; }
         
@@ -62,8 +64,8 @@
         .cert-box p { font-size: 0.9rem; margin-bottom: 8px; color: #bdc3c7; }
         .cert-box strong { color: #fff; }
 
-        .contact-btn { display: inline-block; background: #06c755; color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-        .contact-btn:hover { background: #05a346; transform: translateY(-3px); }
+        .contact-btn { display: inline-block; background: var(--line-color); color: white; padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; text-align: center; }
+        .contact-btn:hover { background: #05a346; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(6, 199, 85, 0.4); }
 
         .copyright { text-align: center; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; padding-top: 30px; font-size: 0.85rem; opacity: 0.5; }
 
@@ -78,10 +80,10 @@
 <body>
 
     <nav>
-        <a href="#" class="logo"><span>🌿</span> 和諧旅遊</a>
+        <a href="#" class="logo">🌿 和諧旅遊</a>
         <ul class="nav-links">
             <li><a href="#qa">常見問題 QA</a></li>
-            <li><a href="#contact">聯絡我們</a></li>
+            <li><a href="https://lin.ee/7WGlamz" target="_blank" class="nav-line-btn">LINE 諮詢</a></li>
         </ul>
     </nav>
 
@@ -102,8 +104,8 @@
                 <div class="qa-a">身為政府合法立案旅行社，我們依法投保「旅行業履約保證保險」及「旅行業責任保險」，為每位參團旅客提供法定之安全保障。</div>
             </div>
             <div class="qa-item">
-                <div class="qa-q">如何預訂行程與付款？</div>
-                <div class="qa-a">您可以透過 Line 或電話與我們聯繫，由專員為您服務。付款方式支持現金、銀行轉帳等多樣化選擇。</div>
+                <div class="qa-q">如何預訂行程與諮詢？</div>
+                <div class="qa-a">我們統一透過官方 LINE 進行諮詢與服務，由專員即時為您解答與規劃。付款方式支持現金、銀行轉帳等多樣化選擇。</div>
             </div>
             <div class="qa-item">
                 <div class="qa-q">取消行程如何退費？</div>
@@ -117,8 +119,7 @@
             <div class="footer-info">
                 <h4>公司資訊</h4>
                 <p><strong>和諧旅遊 Harmony Travel</strong></p>
-                <p>📍 地址：請填寫您的辦公室地址</p>
-                <p>📞 服務專線：請填寫電話</p>
+                <p>📍 地址：桃園市桃園區朝陽街一段92號</p>
                 <p>🆔 統一編號：<strong>54540709</strong></p>
             </div>
             <div class="footer-info">
@@ -131,8 +132,8 @@
             </div>
             <div class="footer-info">
                 <h4>立即諮詢</h4>
-                <p>專業規劃，讓您的旅程更圓滿。歡迎點擊下方加入 Line 官方帳號進行線上諮詢。</p>
-                <a href="#" class="contact-btn">💬 Line 線上諮詢</a>
+                <p>若有任何旅遊需求，請加入官方 LINE，我們將由專業領隊與顧問為您規劃旅程。</p>
+                <a href="https://lin.ee/7WGlamz" target="_blank" class="contact-btn">🟢 立即加入 LINE 客服</a>
             </div>
         </div>
         <div class="copyright">
