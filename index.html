@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>和諧旅遊 | 首頁</title>
+    <title>和諧旅遊 | 專業跨境旅遊規劃</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --sky-blue: #00aaff; --deep-blue: #006699; --bg-color: #e6f0f8; --white: #ffffff; --line-green: #06c755; }
@@ -13,7 +13,7 @@
         .logo-img { height: 60px; width: auto; }
         .nav-links { list-style: none; display: flex; align-items: center; }
         .nav-links li { margin-left: 25px; }
-        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; }
+        .nav-links a { text-decoration: none; color: var(--deep-blue); font-weight: 700; transition: 0.3s; }
         .nav-line-btn { background: var(--line-green); color: white !important; padding: 10px 25px; border-radius: 50px; text-decoration: none; }
         .hero { height: 40vh; background: linear-gradient(rgba(0,102,153,0.7), rgba(0,102,153,0.4)), url('https://images.unsplash.com/photo-1519046904884-53103b34b206?w=1500'); background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; }
         .section { padding: 60px 8%; }
@@ -41,21 +41,21 @@
     </nav>
     <header class="hero">
         <h1>收藏天空下的每一份感動</h1>
-        <p>專業跨境旅遊規劃・深耕亞洲旅遊多年</p>
+        <p>專業跨境旅遊規劃・為您打造高性價比旅程</p>
     </header>
     <section class="section">
         <h2 style="text-align:center; color:var(--deep-blue); margin-bottom:40px;">最新行程推薦</h2>
         <div class="tab-menu">
-            <button class="tab-btn active" onclick="openTab(event, 'NorthAsia')">東北亞旅遊</button>
-            <button class="tab-btn" onclick="openTab(event, 'SouthAsia')">東南亞旅遊</button>
+            <button class="tab-btn active" onclick="openTab(event, 'NAsia')">東北亞旅遊</button>
+            <button class="tab-btn" onclick="openTab(event, 'SAsia')">東南亞旅遊</button>
         </div>
-        <div id="NorthAsia" class="tab-content active">
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img"><div class="tour-info"><h3>日韓深度之旅</h3><p>五星級飯店住宿，補貼方案超值首選。</p></div></div>
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e?w=500" class="tour-img"><div class="tour-info"><h3>中國壯麗山河</h3><p>漫遊北京江南，體驗極致文化底蘊。</p></div></div>
+        <div id="NAsia" class="tab-content active">
+            <div class="tour-card"><img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=500" class="tour-img"><div class="tour-info"><h3>日韓深度之旅</h3><p>入住五星級飯店，補貼方案超值首選。</p></div></div>
+            <div class="tour-card"><img src="https://images.unsplash.com/photo-1547984609-4b7b233e654e?w=500" class="tour-img"><div class="tour-info"><h3>中國壯麗山河</h3><p>深度走訪北京江南，感受極致文化底蘊。</p></div></div>
         </div>
-        <div id="SouthAsia" class="tab-content">
+        <div id="SAsia" class="tab-content">
             <div class="tour-card"><img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=500" class="tour-img"><div class="tour-info"><h3>曼谷度假盛宴</h3><p>湄南河畔景觀飯店，道地泰式饗宴。</p></div></div>
-            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500" class="tour-img"><div class="tour-info"><h3>越南下龍灣</h3><p>世界自然遺產巡禮，高CP值度假首選。</p></div></div>
+            <div class="tour-card"><img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=500" class="tour-img"><div class="tour-info"><h3>越南下龍灣</h3><p>世界自然遺產巡禮，享受極致度假體驗。</p></div></div>
         </div>
     </section>
     <footer><p>&copy; 2026 和諧旅遊 | 統編：54540709</p></footer>
